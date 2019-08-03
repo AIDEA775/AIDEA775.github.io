@@ -4,8 +4,6 @@ title = "AIDEA775's Blog"
 theme = "terminal"
 paginate = 5
 
-publishDir = "docs"
-
 [params]
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
