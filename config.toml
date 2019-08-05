@@ -1,7 +1,7 @@
 baseURL = "https://blog.aidea775.com"
 languageCode = "en-us"
 title = "AIDEA775's Blog"
-theme = "terminal"
+theme = ["terminal8"]
 paginate = 5
 
 [params]
@@ -21,7 +21,6 @@ paginate = 5
     title = "AIDEA775's Blog"
     subtitle = ""
     keywords = ""
-    copyright = ""
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"

@@ -1,0 +1,8 @@
+{{ if .Params.Date }}
+  <span class="key">published on</span>
+  <span class="val">
+    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">
+      {{ .Date.Format "January 02, 2006" }}
+    </time>
+  </span>
+{{ end }}

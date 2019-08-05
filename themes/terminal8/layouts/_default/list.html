@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+  {{ $paginator := .Paginate (where .Data.Pages "Section" "posts") (or .Site.Params.paginate 3) }}
+  <main role="main" class="article-list">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{ range $paginator.Pages }}
+      {{ partial "article-item.html" . }}
+    {{ end }}
+  </main>
+  {{ partial "paginator.html" $paginator }}
+
+{{ end }}
