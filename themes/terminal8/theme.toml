@@ -8,7 +8,7 @@ description = "Terminal8 is a simple and truly colorful theme based on eight col
 homepage = ""
 tags = ["blog", "syntax highlighting"]
 features = ["blog", "syntax highlighting"]
-min_version = 1
+min_version = 0.30
 
 [author]
   name = "Silva Alejandro Ismael"
