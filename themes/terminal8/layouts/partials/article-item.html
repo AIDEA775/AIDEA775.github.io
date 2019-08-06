@@ -25,7 +25,7 @@
     {{ .Description | markdownify }}
     {{ else }}
     {{ .Summary }}
-    {{ end }} {{ if .Truncated }} <a class="read-more button" href="{{ .RelPermalink }}">Read More...</a>{{ end }}
+    {{ end }} {{ if .Truncated }} <a class="read-more button" href="{{ .RelPermalink }}">{{ $.Site.Params.ReadMore }} →</a>{{ end }}
   </section>
 
 </article>

@@ -1,5 +1,7 @@
 baseURL = "https://blog.aidea775.com"
 languageCode = "en-us"
+DefaultContentLanguage = "es"
+defaultContentLanguageInSubdir = true
 title = "AIDEA775's Blog"
 theme = ["terminal8"]
 paginate = 5
@@ -27,10 +29,28 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "AIDEA775"
-      logoHomeLink = "/"
+      logoHomeLink = "/en"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
-        url = "/about"
+        url = "about"
+
+  [languages.es]
+    title = "El blog de AIDEA775"
+    subtitle = ""
+    keywords = ""
+    menuMore = "Más"
+    readMore = "Leer más"
+    readOtherPosts = "Leer otras publicaciones"
+
+    [languages.es.params.logo]
+      logoText = "AIDEA775 en español"
+      logoHomeLink = "/es"
+
+    [languages.es.menu]
+      [[languages.es.menu.main]]
+        identifier = "about"
+        name = "Sobre yo"
+        url = "about"
