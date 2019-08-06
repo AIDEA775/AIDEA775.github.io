@@ -18,6 +18,9 @@ git worktree add -B gh-pages public origin/gh-pages
 echo "Removing existing files"
 rm -rf public/*
 
+#echo "Generating new favicon"
+#python3 favicon.py
+
 echo "Generating site"
 hugo
 
