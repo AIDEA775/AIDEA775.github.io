@@ -1,6 +1,6 @@
 baseURL = "https://blog.aidea775.com"
 languageCode = "en-us"
-DefaultContentLanguage = "es"
+DefaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 title = "AIDEA775's Blog"
 theme = ["terminal8"]
@@ -15,8 +15,6 @@ paginate = 5
   showMenuItems = 0
   fullWidthTheme = false
   centerTheme = true
-  # set a custom favicon (default is a `themeColor` square)
-  # favicon = "favicon.ico"
 
 [languages]
   [languages.en]
@@ -52,5 +50,5 @@ paginate = 5
     [languages.es.menu]
       [[languages.es.menu.main]]
         identifier = "about"
-        name = "Sobre yo"
+        name = "Sobre mí"
         url = "about"
