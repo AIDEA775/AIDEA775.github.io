@@ -32,7 +32,8 @@ Si sos un bot... (Fixme: Completar con algun chiste de robots)
 
 > Nací en una zona humilde de **Córdoba Capital**.
 De chiquito _jugaba con palas_, pero de verdad, no de juguetes.
-Mi viejo es mecánico, fui a un colegio técnico, no falta decir más.
+Mi viejo es mecánico, fui a un colegio técnico, soy de los que no tienen miedo
+a meter mano.
 
 > Mi primer Linux fue Ubuntu, mi primer lenguaje fue Python, y sigue siendo mi lenguaje preferido.
 Uso Linux para todo, **incluso para jugar**.
@@ -42,6 +43,7 @@ Apoyo a la industria nacional, pero un Xiaomi y una Thinkpad fueron las mejores 
 que he comprado.
 
 > Soy ateo pero me cae muy bien la gente creyente.
+Me gusta la comida picante, pero no de la que te hace llorar.
 Cuando tenía 16 quemé la PC de mi familia al querer poner una _memoria DDR2_ en un
 _slot DDR1_, tuve que trabajar todo un verano para poder pagar al técnico.
 
