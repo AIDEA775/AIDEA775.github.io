@@ -427,11 +427,13 @@ article.single th {
 
 article.single td { vertical-align: top }
 
-article.single hr {
-  border: 0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--border-color);
+hr {
+  width:100%;
+  height:1px;
+  border:none;
+  background:var(--border-color);
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 /* Pygments template by Jan T. Sott (https://github.com/idleberg) */
