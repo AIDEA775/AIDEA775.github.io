@@ -92,7 +92,7 @@ which allows you to set the caption and/or title.
 ---
 # Syntax Highlighting
 
-{{< highlight rs "hl_lines=2 6-7" >}}
+{{< highlight rust "hl_lines=2 6-7" >}}
 fn main() -> Result<(), io::Error> {
     // This is done with a 'highlight' short code and includes highlights of lines 2 and 6-7.
     let x = 3;
@@ -104,7 +104,7 @@ fn main() -> Result<(), io::Error> {
 {{< /highlight >}}
 
 
-```rs
+```rust
 static Main() -> Result<(), io::Error> {
     // This is done with a code fence.
     let x = 3;

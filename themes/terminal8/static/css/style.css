@@ -377,14 +377,6 @@ article.single * {
   max-width: 100%;
 }
 
-article.single pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow-x: scroll;
-  border-radius: 3px;
-  padding: 2rem;
-}
-
 article.single p code {
   padding: 0.2em 0.5em;
   border-radius: 3px;
@@ -437,8 +429,6 @@ hr {
 }
 
 /* Pygments template by Jan T. Sott (https://github.com/idleberg) */
-
-pre { background: var(--base00); color: var(--base07) }
 
 .highlight .hll { background-color: var(--base02) }
 .highlight .c { color: var(--base03) } /* Comment */
