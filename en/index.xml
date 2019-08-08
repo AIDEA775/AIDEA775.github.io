@@ -6,17 +6,29 @@
     <description>Recent content on AIDEA775&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Aug 2019 18:06:20 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2019 18:17:40 -0300</lastBuildDate>
     
 	<atom:link href="https://blog.aidea775.com/en/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Chip Mainline Kernel</title>
+      <link>https://blog.aidea775.com/en/guides/chip-mainline-kernel/</link>
+      <pubDate>Wed, 07 Aug 2019 18:17:40 -0300</pubDate>
+      
+      <guid>https://blog.aidea775.com/en/guides/chip-mainline-kernel/</guid>
+      <description>Caso base: La primera vez que alimenté a la CHIP los leds predian, pero no tenía salida de video. Usé el script de la siguiente guía para flashearla.
+http://www.chip-community.org/index.php/Flash_from_command_line#Thore_Krugs_Flasher_Script
+Otra guía para flashear sin conexión y en español (por Alejandro Gaut): https://gitlab.com/snippets/1866690
+Luego de flashearla, los leds empezaron a parpadear, pero seguía sin video, a prueba y error, descubrí que debía conectar la salida de audio R del RCA (roja) a la entrada de video (amarrilla).</description>
+    </item>
+    
+    <item>
       <title>Más Cómo Está Aquí</title>
-      <link>https://blog.aidea775.com/en/posts/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</link>
+      <link>https://blog.aidea775.com/en/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</link>
       <pubDate>Wed, 07 Aug 2019 18:06:20 -0300</pubDate>
       
-      <guid>https://blog.aidea775.com/en/posts/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</guid>
+      <guid>https://blog.aidea775.com/en/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</guid>
       <description>Originalmente publicado en https://t.me/chicoYchica/400 (a las 01:20 AM).
  Preparándose, José cayó dónde más frío hacía, teóricamente allá&amp;rdquo;, explicó rápidamente Joaquín, único policía, mostró gráficas atípicamente caóticas, además miró sombríamente, él quería algún físico alemán ahí, fantasía increíblemente inverosímil.
  Palabras: 30.
@@ -25,10 +37,10 @@ Palabras con tilde: 30.</description>
     
     <item>
       <title>No Era No</title>
-      <link>https://blog.aidea775.com/en/posts/notes/no-era-no/</link>
+      <link>https://blog.aidea775.com/en/notes/no-era-no/</link>
       <pubDate>Mon, 05 Aug 2019 14:24:10 -0300</pubDate>
       
-      <guid>https://blog.aidea775.com/en/posts/notes/no-era-no/</guid>
+      <guid>https://blog.aidea775.com/en/notes/no-era-no/</guid>
       <description>No nunca hubo una vez, un humano. Un humano que siempre fue bueno con las matemáticas. Un humano que le han dicho muchas veces que era un genio. Pero él no lo creía, en cambio prefería pensar que todos eran buenos en sus cosas. Pero luego de escucharlo y vivirlo miles de veces, terminó auto convenciéndose a si mismo de que era muy bueno para eso, para pensar y razonar, y que por lo tanto, como dice el dicho, si es que existe uno, no para escribir.</description>
     </item>
     
