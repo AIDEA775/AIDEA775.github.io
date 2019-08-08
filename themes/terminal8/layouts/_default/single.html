@@ -10,16 +10,8 @@
         </h1>
 
         <div class="meta">
-          {{ partial "publish-date" . }}
-
-          {{ with .Params.categories }}
-            <span class="key">{{ if .Page.Date.IsZero }}published {{ end }}in</span>
-            <span class="val">
-            {{ range . }}
-              <a href="{{ . | urlize | printf "categories/%s" | relURL }}">{{ . }}</a>
-            {{ end }}
-            </span>
-          {{ end }}
+          {{ partial "article-date" . }}
+          {{ partial "article-type" . }}
 
           {{ with .Params.tags }}
             <br>
