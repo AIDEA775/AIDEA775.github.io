@@ -6,7 +6,7 @@ draft: false
 
 Originalmente publicado en https://t.me/chicoYchica/400 (a las 01:20 AM).
 
-> _Preparándose, José cayó dónde más frío hacía, teóricamente allá", explicó rápidamente Joaquín, único policía, mostró gráficas atípicamente caóticas, además miró sombríamente, él quería algún físico alemán ahí, fantasía increíblemente inverosímil._
+> _"Preparándose, José cayó dónde más frío hacía, teóricamente allá", explicó rápidamente Joaquín, único policía, mostró gráficas atípicamente caóticas, además miró sombríamente, él quería algún físico alemán ahí, fantasía increíblemente inverosímil._
 
 Palabras: 30.
 
