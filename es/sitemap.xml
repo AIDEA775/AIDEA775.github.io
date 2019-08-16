@@ -3,23 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.aidea775.com/es/categories/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aidea775.com/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.aidea775.com/es/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.aidea775.com/es/</loc>
-    <priority>0</priority>
+    <lastmod>2019-08-07T18:17:40-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -33,8 +18,50 @@
   </url>
   
   <url>
+    <loc>https://blog.aidea775.com/es/guides/</loc>
+    <lastmod>2019-08-07T18:17:40-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.aidea775.com/es/guides/chip-mainline-kernel/</loc>
+    <lastmod>2019-08-07T18:17:40-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.aidea775.com/es/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</loc>
+    <lastmod>2019-08-07T18:06:20-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.aidea775.com/es/notes/</loc>
+    <lastmod>2019-08-07T18:06:20-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.aidea775.com/es/notes/no-era-no/</loc>
+    <lastmod>2019-08-05T14:24:10-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.aidea775.com/es/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aidea775.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.aidea775.com/es/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.aidea775.com/es/about/</loc>
+  </url>
+  
+  <url>
     <loc>https://blog.aidea775.com/es/tags/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

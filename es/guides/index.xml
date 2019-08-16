@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on El blog de AIDEA775</title>
+    <link>https://blog.aidea775.com/es/guides/</link>
+    <description>Recent content in Guides on El blog de AIDEA775</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Aug 2019 18:17:40 -0300</lastBuildDate>
+    
+	<atom:link href="https://blog.aidea775.com/es/guides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux Mainline en CHIP</title>
+      <link>https://blog.aidea775.com/es/guides/chip-mainline-kernel/</link>
+      <pubDate>Wed, 07 Aug 2019 18:17:40 -0300</pubDate>
+      
+      <guid>https://blog.aidea775.com/es/guides/chip-mainline-kernel/</guid>
+      <description>En este texto cuento como fue el proceso que llevé a cabo para compilar linux mainline para la CHIP desde la primera vez que la enchufé.
+CHIP es una computadora single-board fabricada por Next Thing Co. (NTC), lanzado como open-source hardware corriendo open-source software. Fue anunciado como &amp;ldquo;la primera computadora del mundo de $ 9&amp;rdquo;. Mas info en Wikipedia.
+  Flasheando La primera vez que alimenté a la CHIP los leds prendian, pero no tenía salida de video.</description>
+    </item>
+    
+  </channel>
+</rss>

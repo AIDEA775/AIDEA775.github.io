@@ -6,9 +6,54 @@
     <description>Recent content on El blog de AIDEA775</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 07 Aug 2019 18:17:40 -0300</lastBuildDate>
     
 	<atom:link href="https://blog.aidea775.com/es/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux Mainline en CHIP</title>
+      <link>https://blog.aidea775.com/es/guides/chip-mainline-kernel/</link>
+      <pubDate>Wed, 07 Aug 2019 18:17:40 -0300</pubDate>
+      
+      <guid>https://blog.aidea775.com/es/guides/chip-mainline-kernel/</guid>
+      <description>En este texto cuento como fue el proceso que llevé a cabo para compilar linux mainline para la CHIP desde la primera vez que la enchufé.
+CHIP es una computadora single-board fabricada por Next Thing Co. (NTC), lanzado como open-source hardware corriendo open-source software. Fue anunciado como &amp;ldquo;la primera computadora del mundo de $ 9&amp;rdquo;. Mas info en Wikipedia.
+  Flasheando La primera vez que alimenté a la CHIP los leds prendian, pero no tenía salida de video.</description>
+    </item>
+    
+    <item>
+      <title>Más Cómo Está Aquí</title>
+      <link>https://blog.aidea775.com/es/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</link>
+      <pubDate>Wed, 07 Aug 2019 18:06:20 -0300</pubDate>
+      
+      <guid>https://blog.aidea775.com/es/notes/m%C3%A1s-c%C3%B3mo-est%C3%A1-aqu%C3%AD/</guid>
+      <description>Originalmente publicado en https://t.me/chicoYchica/400 (a las 01:20 AM).
+ &amp;ldquo;Preparándose, José cayó dónde más frío hacía, teóricamente allá&amp;rdquo;, explicó rápidamente Joaquín, único policía, mostró gráficas atípicamente caóticas, además miró sombríamente, él quería algún físico alemán ahí, fantasía increíblemente inverosímil.
+ Palabras: 30.
+Palabras con tilde: 30.</description>
+    </item>
+    
+    <item>
+      <title>No Era No</title>
+      <link>https://blog.aidea775.com/es/notes/no-era-no/</link>
+      <pubDate>Mon, 05 Aug 2019 14:24:10 -0300</pubDate>
+      
+      <guid>https://blog.aidea775.com/es/notes/no-era-no/</guid>
+      <description>No nunca hubo una vez, un humano. Un humano que siempre fue bueno con las matemáticas. Un humano que le han dicho muchas veces que era un genio. Pero él no lo creía, en cambio prefería pensar que todos eran buenos en sus cosas. Pero luego de escucharlo y vivirlo miles de veces, terminó auto convenciéndose a si mismo de que era muy bueno para eso, para pensar y razonar, y que por lo tanto, como dice el dicho, si es que existe uno, no para escribir.</description>
+    </item>
+    
+    <item>
+      <title>Sobre mí</title>
+      <link>https://blog.aidea775.com/es/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.aidea775.com/es/about/</guid>
+      <description>Hey, estás leyendo esto, deja que te cuente un poco:
+Sobre yo Soy argentino, estudio Lic. en Ciencias de la Computación en FAMAF/UNC, abanderado, salí en la tele, di un par de charlas, pero lo más me enorgullese en este momento que estes leyendo sobre mi :D.
+Aunque, si sólo estás investigandome, puedes continuar tu stalkeo en mis perfiles de:
+ Github Linkedin CV (proximamente).  Si en realidad me estás acostando, ¡no hay problema!</description>
+    </item>
     
   </channel>
 </rss>
