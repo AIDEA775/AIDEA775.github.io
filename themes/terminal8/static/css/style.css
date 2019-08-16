@@ -12,7 +12,7 @@ blanco #ffffff
   --base0: #242424;
   --base1: #5c5653;
   --base2: #ff7733;
-  --base3: #7fe420;
+  --base3: #00c853;
   --base4: #36a3d9;
   --base5: #a37acc;
   --base6: #ff3333;
@@ -69,7 +69,7 @@ body {
 }
 
 .container {
-  max-width: 52em;
+  max-width: 80ch;
   margin-left: auto;
   margin-right: auto;
 }
@@ -364,7 +364,10 @@ article.single section.body h4 { color: var(--base5); }
 article.single section.body h5 { color: var(--base6); }
 article.single section.body h6 { color: var(--base0); }
 
-article.single section.body a { color: var(--base4); }
+article.single section.body a {
+  color: var(--base4);
+  text-decoration: none;
+}
 
 /* Article Elements */
 

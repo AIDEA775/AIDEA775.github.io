@@ -1,6 +1,6 @@
 baseURL = "https://blog.aidea775.com"
 languageCode = "en-us"
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "es"
 defaultContentLanguageInSubdir = true
 title = "AIDEA775's Blog"
 theme = ["terminal8"]
@@ -33,7 +33,7 @@ paginate = 5
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
-        url = "about"
+        url = "/en/about"
 
   [languages.es]
     title = "El blog de AIDEA775"
@@ -51,4 +51,4 @@ paginate = 5
       [[languages.es.menu.main]]
         identifier = "about"
         name = "Sobre mí"
-        url = "about"
+        url = "/es/about"

@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Pages ".Type" "!=" "page") (or .Site.Params.paginate 3) }}
+  {{ $paginator := .Paginate (where .Site.RegularPages ".Type" "!=" "page") (or .Site.Params.paginate 3) }}
   <main role="main" class="article-list">
     <h1 class="list-title">{{ .Title }}</h1>
     {{ range $paginator.Pages }}
