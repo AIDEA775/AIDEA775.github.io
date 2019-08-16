@@ -422,8 +422,8 @@ hr {
   height:1px;
   border:none;
   background:var(--border-color);
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 /* Pygments template by Jan T. Sott (https://github.com/idleberg) */

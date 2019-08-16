@@ -1,6 +1,6 @@
 ---
 title: "Linux Mainline en CHIP"
-date: 2019-08-07T18:17:40-03:00
+date: 2019-08-16T18:10:40-03:00
 draft: false
 ---
 
@@ -294,5 +294,10 @@ run nfs_bootcmd
 ```
 
 ---
+
+```none
+# uname -a
+Linux chip 5.2.0-rc1vv1-gf49aa1de9 #5 SMP Fri May 24 18:07:53 -03 2019 armv7l GNU/Linux
+```
 
 El log completo se encuentra [acá](/chip-mainline-kernel.log).
