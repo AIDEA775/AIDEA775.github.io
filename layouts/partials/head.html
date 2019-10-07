@@ -1,5 +1,4 @@
 <meta charset="utf-8">
-<meta name="description" content="{{ if eq .Description "" }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
 {{- with $.Param "keywords" }}
 <meta name="keywords" content="{{ delimit . "," }}">
 {{- end }}
@@ -14,4 +13,3 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-okaidia.min.css" rel="stylesheet" />
 <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <link id="favicon" rel="icon" href="/favicon.png" type="image/png" sizes="16x16">
-<title>{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}</title>

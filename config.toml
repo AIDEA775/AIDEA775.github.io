@@ -3,7 +3,6 @@ languageCode = "en-us"
 DefaultContentLanguage = "es"
 defaultContentLanguageInSubdir = true
 title = "AIDEA775's Blog"
-theme = ["terminal8"]
 paginate = 5
 
 [params]
