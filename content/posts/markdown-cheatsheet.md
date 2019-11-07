@@ -2,9 +2,6 @@
 title: "Markdown Cheatsheet"
 date: 2019-08-04T21:53:04-03:00
 draft: true
-tags: [hugo]
-aliases:
-  - /blog/2016/03/hugo-blogging-cheatsheet
 ---
 
 
@@ -46,7 +43,7 @@ See [content organization](https://gohugo.io/content-management/organization/).
 An image link is created by putting an exclamation mark before the link such
 as `![house](../house.gif)`
 
-![house](/2018-07-07-005922.png)
+![house](/media/2018-07-07-005922.png)
 
 The `..` is needed because in the final site, the post's `index.html` file is one
 folder below the images (this is due to '.html' elimination from the URLs).
@@ -64,9 +61,9 @@ hugo-cheatsheet/celtic-knot.jpg
 
 And then in the post file `hugo-cheatsheet.md` you can link to an image like this
 
-    ![Celtic knot](/2018-07-07-005922.png)
+    ![Celtic knot](/media/2018-07-07-005922.png)
 
-![Celtic knot](/2018-07-07-005922.png)
+![Celtic knot](/media/2018-07-07-005922.png)
 
 You will end up with this disk structure in your `public` folder:
 
@@ -79,14 +76,14 @@ blog\2019\hugo-cheatsheet\celtic-knot.jpg
 
 Links in `index.html` will be relative:
 
-    <img src="/2018-07-07-005922.png" alt="Celtic knot" />
+    <img src="/media/2018-07-07-005922.png" alt="Celtic knot" />
 
 Which means you can move the website around without any problems.
 
 You can also use the [figure shortcode](https://gohugo.io/content-management/shortcodes/),
 which allows you to set the caption and/or title.
 
-{{< figure src="/2018-07-07-005922.png" caption="A Celtic Knot" >}}
+{{< figure src="/media/2018-07-07-005922.png" caption="A Celtic Knot" >}}
 
 
 ---

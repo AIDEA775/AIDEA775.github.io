@@ -4,7 +4,6 @@ date: 2019-08-05T14:24:10-03:00
 draft: false
 ---
 
-satsrta
 No nunca hubo una vez, un humano.
 Un humano que siempre fue bueno con las matemáticas.
 Un humano que le han dicho muchas veces que era un genio.

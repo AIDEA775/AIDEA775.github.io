@@ -300,4 +300,4 @@ run nfs_bootcmd
 Linux chip 5.2.0-rc1vv1-gf49aa1de9 #5 SMP Fri May 24 18:07:53 -03 2019 armv7l GNU/Linux
 ```
 
-El log completo se encuentra [acá](/chip-mainline-kernel.log).
+El log completo se encuentra [acá](/media/chip-mainline-kernel.log).
