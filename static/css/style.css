@@ -8,37 +8,6 @@ negro #242424
 blanco #ffffff
 */
 
-:root {
-  --base0: #242424;
-  --base1: #5c5653;
-  --base2: #ff7733;
-  --base3: #00c853;
-  --base4: #36a3d9;
-  --base5: #a37acc;
-  --base6: #ff3333;
-  --base7: #ffffff;
-
-  --base2a: rgba(255, 119, 51, .1);
-
-  --base00: #2d2d2d;
-  --base01: #393939;
-  --base02: #515151;
-  --base03: #747369;
-  --base04: #a09f93;
-  --base05: #d3d0c8;
-  --base06: #e8e6df;
-  --base07: #f2f0ec;
-  --base08: #f2777a;
-  --base09: #f99157;
-  --base0a: #ff7733;
-  --base0b: #99cc99;
-  --base0c: #66cccc;
-  --base0d: #6699cc;
-  --base0e: #cc99cc;
-  --base0f: #d27b53;
-  --baseff: #ffffff;
-}
-
 .base00 { color: var(--base00); }
 .base01 { color: var(--base01); }
 .base02 { color: var(--base02); }
@@ -56,23 +25,12 @@ blanco #ffffff
 .base0e { color: var(--base0e); }
 .base0f { color: var(--base0f); }
 
-@custom-media --breakpoint-md (max-width: 52em);
 
 /* General Page Layout */
 
-body {
-  margin: 0;
-  background-color: var(--base7);
-  color: var(--base0);
-  line-height: 1.5;
-  font-size: 100%;
-}
 
-.container {
-  max-width: 80ch;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
 
 div.right {
   float:right;
@@ -80,12 +38,6 @@ div.right {
 
 div.clearfix {
   overflow: auto;
-}
-
-@media (--breakpoint-md) {
-  .container {
-    width: 100%;
-  }
 }
 
 article.single section,
@@ -98,24 +50,6 @@ article.single section,
 @media (--breakpoint-md) {
   article.single section,
   .article-list article {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-header, footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-header {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-@media (--breakpoint-md) {
-  header {
-    margin-top: 0;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -250,39 +184,6 @@ footer a {
 .homepage .tag {
   margin-right: 2em;
 }
-
-/* Post List Layout */
-
-.article-list h1.list-title {
-  font-size: 3em;
-  color: var(--base0a);
-}
-
-.article-list article {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.article-list article h2.headline,
-.article-list article h2.headline a {
-  margin-top: 0;
-  color: var(--base4);
-}
-
-.article-list article .meta {
-  margin-bottom: 1rem;
-}
-
-.article-list article .meta .key {
-  color: var(--base03);
-}
-
-.article-list article .meta .val,
-.article-list article .meta .val a {
-  color: var(--base5);
-}
-
-.article-list article section.summary a { color: var(--base4); }
 
 /* Pagination */
 

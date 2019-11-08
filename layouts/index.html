@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $paginator := .Paginate (where .Site.RegularPages ".Type" "!=" "page") (or .Site.Params.paginate 3) }}
-  <main role="main" class="article-list">
-    <h1 class="list-title">{{ .Title }}</h1>
+  <main role="main">
+    <h1>{{ .Title }}</h1>
     {{ range $paginator.Pages }}
       {{ partial "article-item.html" . }}
     {{ end }}

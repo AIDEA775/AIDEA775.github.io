@@ -1,15 +1,14 @@
 <meta charset="utf-8">
-{{- with $.Param "keywords" }}
-<meta name="keywords" content="{{ delimit . "," }}">
-{{- end }}
-{{- with $.Param "author" }}
-<meta name="author" content="{{ . }}">
-{{- end }}
+<title>{{ .Title }}</title>
+{{ with $.Site.Author.name }}<meta name="author" content="{{.}}">{{ end }}
 {{ hugo.Generator }}
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" type="text/css">
 <link rel="stylesheet" href="{{ "css/arst.css" | relURL }}" type="text/css">
+<link rel="stylesheet" href="{{ "css/holi.css" | relURL }}" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-<link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <link id="favicon" rel="icon" href="/favicon.png" type="image/png" sizes="16x16">

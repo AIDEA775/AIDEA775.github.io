@@ -1,9 +1,8 @@
-<article class="list-item post on-list" itemscope itemtype="http://schema.org/Blog">
-  <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
+<article class="item" itemscope itemtype="http://schema.org/Blog">
+  <h2 itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
   <div class="meta">
 
-    {{ partial "article-date" . }}
-    {{ partial "article-type" . }}
+    {{ partial "article-meta" . }}
 
     {{ if .Params.tags }}
     <span class="post-tags">
@@ -26,8 +25,11 @@
     {{ else if .Description }}
     {{ .Description | markdownify }}
     {{ else }}
-    {{ .Summary }}
-    {{ end }} {{ if .Truncated }} <a class="read-more button" href="{{ .RelPermalink }}">{{ $.Site.Params.ReadMore }} →</a>{{ end }}
+    {{ .Summary | markdownify }}
+    {{ end }}
+    {{ if .Truncated }}
+    <a class="read-more button" href="{{ .RelPermalink }}">{{ $.Site.Params.ReadMore }} →</a>
+    {{ end }}
   </section>
 
 </article>

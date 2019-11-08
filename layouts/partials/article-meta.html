@@ -6,3 +6,10 @@
     </time>
   </span>
 {{ end }}
+
+{{ with .Type }}
+  <span class="key">in</span>
+  <span class="val">
+    <a href="{{ . | absLangURL }}">{{ . }}</a>
+  </span>
+{{ end }}
