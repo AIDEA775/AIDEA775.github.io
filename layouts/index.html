@@ -6,6 +6,27 @@
       {{ partial "article-item.html" . }}
     {{ end }}
   </main>
-  {{ partial "paginator.html" $paginator }}
+
+  {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+      <span class="button">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}">&lt; Prev</a>
+        {{ else }}
+          <span>&lt; Prev</span>
+        {{ end }}
+      </span>
+
+      <span>{{ $paginator.PageNumber}} / {{ $paginator.TotalPages }}</span>
+
+      <span class="button">
+          {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}">Next &gt;</a>
+        {{ else }}
+          <span>Next &gt;</span>
+        {{ end }}
+      </span>
+    </nav>
+  {{ end }}
 
 {{ end }}

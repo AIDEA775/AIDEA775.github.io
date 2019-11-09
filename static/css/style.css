@@ -55,21 +55,6 @@ article.single section,
   }
 }
 
-footer {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-size: 0.9em;
-  color: var(--base0);
-}
-
-@media (--breakpoint-md) {
-  footer {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,37 +84,6 @@ header a.path {
 
 header span.caret {
   color: var(--base07);
-}
-
-/* Footer Layout */
-
-footer a {
-  color: var(--base1);
-  text-decoration: none;
-}
-
-/* 404 Page Layout */
-
-.page-not-found h1 {
-  text-align: center;
-  font-size: 5em;
-}
-
-.page-not-found h2 {
-  text-align: center;
-  font-size: 3em;
-  color: var(--base04);
-  margin-bottom: 4rem;
-}
-
-@media (--breakpoint-md) {
-  .page-not-found h1 {
-    font-size: 3em;
-  }
-
-  .page-not-found h2 {
-    font-size: 2em;
-  }
 }
 
 /* Homepage Layout */
@@ -183,77 +137,6 @@ footer a {
 
 .homepage .tag {
   margin-right: 2em;
-}
-
-/* Pagination */
-
-nav.paginator {
-  text-align: center;
-}
-
-nav.paginator a {
-  color: var(--base0e);
-}
-
-nav.paginator .faded {
-  color: var(--base02);
-}
-
-nav.paginator .nav-left {
-  margin-left: auto;
-  margin-right: 1%;
-}
-
-nav.paginator .nav-right {
-  margin-left: 1%;
-  margin-right: auto;
-}
-
-/* Single Post Layout */
-
-article.single .meta {
-  font-size: 0.9em;
-  text-align: right;
-}
-
-article.single .meta .key {
-  color: var(--base03);
-}
-
-article.single .meta .val, article.single .meta .val a {
-  color: var(--base5);
-}
-
-@media (--breakpoint-md) {
-  article.single .meta {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-article.single h1.headline {
-  margin-top: 0;
-  font-size: 3em;
-  color: var(--base0a);
-}
-
-@media (--breakpoint-md) {
-  article.single h1.headline {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-article.single section.body {
-  padding-top: 4rem;
-  padding-bottom: 3rem;
-}
-
-@media (--breakpoint-md) {
-  article.single section.body {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
 }
 
 /* Highlight Colors */

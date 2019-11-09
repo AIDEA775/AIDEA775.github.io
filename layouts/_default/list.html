@@ -1,11 +1,32 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Data.Pages "Section" .Type ) (or .Site.Params.paginate 3) }}
-  <main role="main">
-    <h1>{{ .Title }}</h1>
-    {{ range $paginator.Pages }}
-      {{ partial "article-item.html" . }}
-    {{ end }}
-  </main>
-  {{ partial "paginator.html" $paginator }}
+  {{ $paginator := .Paginate (where .Data.Pages "Section" .Type ) (or .Site.Params.paginate 2) }}
+    <main role="main">
+      <h1>{{ .Title }}</h1>
+      {{ range $paginator.Pages }}
+        {{ partial "article-item.html" . }}
+      {{ end }}
+    </main>
+
+  {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+      <span class="button">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}">&lt; Prev</a>
+        {{ else }}
+          <span>&lt; Prev</span>
+        {{ end }}
+      </span>
+
+      <span>{{ $paginator.PageNumber}} / {{ $paginator.TotalPages }}</span>
+
+      <span class="button">
+          {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}">Next &gt;</a>
+        {{ else }}
+          <span>Next &gt;</span>
+        {{ end }}
+      </span>
+    </nav>
+  {{ end }}
 
 {{ end }}
