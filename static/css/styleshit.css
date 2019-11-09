@@ -1,14 +1,17 @@
 :root {
-    --base0: #242424;
+    --base0: #272822;
     --base1: #5c5653;
-    --base2: #ff7733;
+    --base2: #ff6214;
     --base3: #00c853;
-    --base4: #36a3d9;
-    --base5: #a37acc;
+    --base4: #1178ce;
+    --base5: #8c1eb2;
     --base6: #ff3333;
     --base7: #ffffff;
 
-    --base2a: rgba(255, 119, 51, .1);
+    --base2a: rgba(255, 98, 20, .1);
+    --accent: var(--base2);
+    --background: var(--base7);
+    --border-color: hsla(0, 0%, 0%, 0.1);
 }
 
 body {
@@ -16,11 +19,11 @@ body {
     padding: 0;
     font-family: 'Roboto Mono', monospace;
     font-size: 1rem;
-    line-height: 1.54;
+    line-height: 1.5;
     color: #242424;
     color: var(--base0);
     background-color: #fff;
-    background-color: var(--base7);
+    background-color: var(--background);
     text-rendering: optimizeLegibility;
     border: none;
 }
@@ -40,6 +43,16 @@ header {
     position: relative;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+a {
+    color: var(--base4)
 }
 
 /*
@@ -63,7 +76,7 @@ header {
     text-decoration: none;
 }
 
-.button>span {
+.button > span {
     display: flex;
     padding: 8px 16px;
     color: var(--base1);
@@ -163,8 +176,9 @@ article .meta .val a {
 /* 
  * Article item list
  */
-main h1 {
+main > h1 {
     font-size: 3em;
+    font-weight: 100;
     color: var(--base2);
 }
 
@@ -185,16 +199,18 @@ article.item section.summary a {
 /*
  * Article post layuot
  */
-article.post h1 {
+article.post > h1 {
     --border: 3px dotted var(--base2);
     position: relative;
     color: var(--base2);
     margin: 0 0 15px;
+    font-size: 2.25em;
+    font-weight: 100;
     padding-bottom: 15px;
     border-bottom: var(--border)
 }
 
-article.post h1:after {
+article.post > h1:after {
     content: "";
     position: absolute;
     bottom: 2px;
@@ -203,7 +219,7 @@ article.post h1:after {
     border-bottom: var(--border)
 }
 
-article.post h1 a {
+article.post > h1 a {
     text-decoration: none
 }
 
@@ -211,13 +227,7 @@ article.post .meta {
     font-size: 0.9em;
     text-align: right;
 }
-  
-article.post h1.headline {
-    margin-top: 0;
-    font-size: 3em;
-    color: var(--base0a);
-  }
-  
+
 article.post section.body {
     padding-top: 4rem;
     padding-bottom: 3rem;
@@ -322,4 +332,239 @@ footer a {
 .page-not-found h2 {
     text-align: center;
     color: var(--base0);
+}
+
+/*
+ * Article content
+ */
+.body h1 {
+    color: var(--base4);
+    font-size: 2em;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.body h1:after {
+    content: "========================================";
+    margin-left: .5rem;
+    font-weight: lighter;
+}
+
+.body h2 {
+    color: var(--base2);
+    font-size: 2em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.body h3 {
+    color: var(--base3);
+    font-size: 1.75em;
+}
+
+.body h4 {
+    color: var(--base5);
+    font-size: 1.5em;
+}
+
+.body h5 {
+    color: var(--base6);
+    font-size: 1.25em;
+}
+
+.body h6 {
+    color: var(--base0);
+    font-size: 1em;
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+ol,
+ul {
+    padding-left: 4rem;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol ol {
+    list-style-type: lower-alpha
+}
+
+code {
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    background: var(--base2);
+    color: var(--base7);
+}
+
+code,
+pre {
+    font-size: .95rem
+}
+
+pre {
+    padding: 1em;
+    margin: 0.5em 0;
+    border-radius: 0.3em;
+    background: var(--base0);
+    color: var(--base7);
+}
+
+pre code {
+    background: none;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+table {
+    table-layout: fixed;
+    margin: 30px 0;
+}
+
+table {
+    border: 1px solid var(--accent);
+    padding: .5rem;
+}
+
+td,
+th {
+    padding: .5rem
+}
+
+th {
+    color: var(--accent)
+}
+
+blockquote {
+    margin-left: 2rem;
+    margin-right: 0;
+    padding-left: 1rem;
+    border-left: 5px solid var(--base5);
+}
+
+@media (orientation: portrait) {
+    blockquote {
+        margin-left: 0;
+    }
+}
+
+hr {
+    width:90%;
+    height:1px;
+    border:none;
+    background:var(--border-color);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+/*
+ * TODO Check this oneday
+ */
+img {
+    display: block;
+    max-width: 100%
+}
+
+img.center,
+img.left {
+    margin-right: auto
+}
+
+img.center,
+img.right {
+    margin-left: auto
+}
+
+figure {
+    display: table;
+    max-width: 100%;
+    margin: 25px 0
+}
+
+figure.center,
+figure.left {
+    margin-right: auto
+}
+
+figure.center,
+figure.right {
+    margin-left: auto
+}
+
+figure figcaption {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    background: #23b0ff;
+    background: var(--accent);
+    color: #1d212c;
+    color: var(--background)
+}
+
+figure figcaption.left {
+    text-align: left
+}
+
+figure figcaption.center {
+    text-align: center
+}
+
+figure figcaption.right {
+    text-align: right
+}
+
+.post-meta {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: rgba(35, 176, 255, .7)
+}
+
+.post-tags {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    opacity: .5
+}
+
+.post-tags a {
+    text-decoration: none
+}
+
+.post-content {
+    margin-top: 30px
+}
+
+.post-cover {
+    border: 20px solid #23b0ff;
+    border: 20px solid var(--accent);
+    background: transparent;
+    margin: 40px 0;
+    padding: 20px
+}
+
+@media (max-width:683px) {
+    .post-cover {
+        padding: 10px;
+        border-width: 10px
+    }
+}
+
+.post--regulation h1,
+.post--regulation h2 {
+    justify-content: center
+}
+
+.post--regulation h2 {
+    margin-bottom: 10px
+}
+
+.post--regulation h2+h2 {
+    margin-top: -10px;
+    margin-bottom: 20px
 }

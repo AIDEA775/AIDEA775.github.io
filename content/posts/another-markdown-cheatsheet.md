@@ -108,6 +108,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
   * Unordered sub-list. 
 1. Actual numbers don't matter, just that it's a number
   1. Ordered sub-list
+  2. hola
 4. And another item.
 
    You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
@@ -208,23 +209,6 @@ Inline `code` has `back-ticks around` it.
 Inline `code` has `back-ticks around` it.
 
 Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
-
-<pre lang="no-highlight"><code>```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
- 
-```python
-s = "Python syntax highlighting"
-print s
-```
- 
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
-```
-</code></pre>
-
 
 
 ```javascript
