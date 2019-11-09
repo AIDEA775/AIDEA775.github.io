@@ -19,7 +19,7 @@
       <guid>https://blog.aidea775.com/es/guides/chip-mainline-kernel/</guid>
       <description>En este texto cuento como fue el proceso que llevé a cabo para compilar linux mainline para la CHIP desde la primera vez que la enchufé.
 CHIP es una computadora single-board fabricada por Next Thing Co. (NTC), lanzado como open-source hardware corriendo open-source software. Fue anunciado como &amp;ldquo;la primera computadora del mundo de $ 9&amp;rdquo;. Mas info en Wikipedia.
-  Flasheando La primera vez que alimenté a la CHIP los leds prendian, pero no tenía salida de video.</description>
+ Tabla de contenidos:  Flasheando La primera vez que alimenté a la CHIP los leds prendian, pero no tenía salida de video.</description>
     </item>
     
   </channel>
