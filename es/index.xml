@@ -6,10 +6,19 @@
     <description>Recent content on El blog de AIDEA775</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Aug 2019 18:10:40 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 22:01:50 -0300</lastBuildDate>
     
 	<atom:link href="https://blog.aidea775.com/es/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CeibOS. Parte 0</title>
+      <link>https://blog.aidea775.com/es/posts/ceibos-parte-0/</link>
+      <pubDate>Wed, 06 Nov 2019 22:01:50 -0300</pubDate>
+      
+      <guid>https://blog.aidea775.com/es/posts/ceibos-parte-0/</guid>
+      <description>Nunca entendí los shortcuts y no los entendí porque no tienen sentido:  Si estoy en un editor de texto, Ctrl+c copia el texto seleccionado. Pero si estoy en una terminal, Ctrl+c termina el proceso que esta corriendo. En cambio, Ctrl+Shift+c en una terminal copia el texto seleccionado. Pero, Ctrl+Shift+c en Chromium abre el inspector. &amp;hellip; En Visual Code, Ctrl+x corta la linea actual si no hay texto seleccionado. Pero en cualquier otro lado, Ctrl+x no hace nada si no hay texto seleccionado.</description>
+    </item>
     
     <item>
       <title>Linux Mainline en CHIP</title>
