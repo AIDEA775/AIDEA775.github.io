@@ -1,14 +1,12 @@
 <header>
-  <div class="header__logo">
-    {{ partial "logo.html" . }}
-  </div>
+  {{ partial "logo.html" . }}
 
   <nav class="menu">
     <ul class="menu__inner">
       {{ range $.Site.Menus.main }}
-        <li class="button">
-          <a href="{{ .URL }}">{{ .Name }}</a>
-        </li>
+      <li class="button">
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
       {{ end }}
     </ul>
   </nav>
