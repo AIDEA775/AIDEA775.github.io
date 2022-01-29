@@ -1,0 +1,30 @@
+baseURL: "https://aidea775.github.io"
+languageCode: en-us
+defaultContentLanguage: es
+paginate: 5
+
+params:
+  showMenuItems: 0
+  fullWidthTheme: false
+  centerTheme: true
+
+languages:
+  es:
+    title: "El blog de AIDEA775"
+    menuMore: "Más"
+    readMore: "Leer más"
+    readOtherPosts: "Leer otras publicaciones"
+    params:
+      logo:
+        text: "AIDEA775 en español"
+    menu:
+      main:
+        - name: "Sobre mí"
+          identifier: "about"
+          url: "/about"
+        - name: "Notas"
+          identifier: "notes"
+          url: "/notes"
+        - name: "Guias"
+          identifier: "guides"
+          url: "/guides"
