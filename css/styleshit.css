@@ -96,40 +96,9 @@ a {
  * Header Logo
  */
 .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
     background: var(--accent);
     color: var(--base7);
-    padding: 5px 10px
-}
-
-.header__logo {
-    display: flex;
-    flex: 1
-}
-
-.header__logo:after {
-    content: "";
-    background: 
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            #fff 0,
-            #fff 10px),
-        linear-gradient(
-            90deg,
-            var(--base2) 70%,
-            var(--base2a));
-    display: block;
-    width: 100%;
-    right: 10px
-}
-
-.header__logo a {
-    flex: 0 0 auto;
-    max-width: 100%;
+    padding: 0.5rem 1.5rem;
     text-decoration: none
 }
 
