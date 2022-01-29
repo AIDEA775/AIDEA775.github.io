@@ -1,0 +1,286 @@
+<!doctype html><html lang=es>
+<head>
+<meta charset=utf-8>
+<title>Linux Mainline en CHIP</title>
+<meta name=generator content="Hugo 0.92.1">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=stylesheet href=/css/styleshit.css type=text/css>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.min.css rel=stylesheet>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-okaidia.min.css rel=stylesheet>
+<link id=favicon rel=icon href=/favicon.png type=image/png sizes=16x16>
+</head>
+<body>
+<div class=container>
+<header>
+<div class=header__logo>
+<a href=https://aidea775.github.io>
+<div class=logo>
+AIDEA775 en español
+</div>
+</a>
+</div>
+<nav class=menu>
+<ul class=menu__inner>
+<li class=button>
+<a href=/guides>Guias</a>
+</li>
+<li class=button>
+<a href=/notes>Notas</a>
+</li>
+<li class=button>
+<a href=/about>Sobre mí</a>
+</li>
+</ul>
+</nav>
+</header>
+<main role=main>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<h1>
+<a href=https://aidea775.github.io/guides/chip-mainline-kernel/>Linux Mainline en CHIP</a>
+</h1>
+<div class=meta>
+<span class=key>published on</span>
+<span class=val>
+<time itemprop=datePublished datetime=2019-08-16>
+August 16, 2019
+</time>
+</span>
+<span class=key>in</span>
+<span class=val>
+<a href=https://aidea775.github.io/guides>guides</a>
+</span>
+</div>
+<section class=body itemprop=articleBody>
+<p>En este texto cuento como fue el proceso que llevé a cabo para compilar
+<em>linux mainline</em> para la CHIP desde la primera vez que la enchufé.</p>
+<p>CHIP es una computadora <em>single-board</em> fabricada por Next Thing Co. (NTC),
+lanzado como <em>open-source hardware</em> corriendo <em>open-source software</em>.
+Fue anunciado como &ldquo;la primera computadora del mundo de $ 9&rdquo;. Mas info en
+<a href=https://en.wikipedia.org/wiki/CHIP_(computer)>Wikipedia</a>.</p>
+<aside>
+<h6>Tabla de contenidos:</h6>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#compilar>Compilar</a></li>
+<li><a href=#mover>Mover</a></li>
+</ul>
+<ul>
+<li><a href=#rootfs>Rootfs</a></li>
+<li><a href=#nfs>NFS</a></li>
+<li><a href=#ips>IPs</a></li>
+<li><a href=#recompilar>Recompilar</a></li>
+<li><a href=#bootear-posta>Bootear posta</a></li>
+</ul>
+</nav>
+</aside>
+<h1 id=flasheando>Flasheando</h1>
+<p>La primera vez que alimenté a la CHIP los leds prendian, pero no tenía salida
+de video. Usé el script de la siguiente guía para flashearla.</p>
+<p><a href=http://www.chip-community.org/index.php/Flash_from_command_line>http://www.chip-community.org/index.php/Flash_from_command_line</a></p>
+<p>Otra guía para flashear sin conexión y en español (por Alejandro Gaut):
+<a href=https://gitlab.com/snippets/1866690>https://gitlab.com/snippets/1866690</a></p>
+<p>Luego de flashearla, los leds empezaron a parpadear,
+pero seguía sin video, a prueba y error, descubrí que debía conectar la
+salida de audio R del RCA (roja) a la entrada de video (amarilla).</p>
+<p>Una vez que el Debian de NTC booteó, y luego de jugar un buen rato a
+<a href="https://www.youtube.com/watch?v=cP1x_EypI6Q">Celeste Classic</a>,
+empecé a compilar linux mainline.</p>
+<h2 id=compilar>Compilar</h2>
+<p>Pasos sacados de <a href=http://www.chip-community.org/index.php/Compile_the_Linux_kernel_for_CHIP>aqui</a>.</p>
+<p>Cross compiling toolchain:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install gcc-arm-linux-gnueabihf binutils-arm-linux-gnueabihf
+</code></pre></div><p>Linux Mainline:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+<span style=color:#75715e># sino sólo el último commit</span>
+git clone --depth <span style=color:#ae81ff>1</span> git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+</code></pre></div><p>Kernel config:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cp arch/arm/configs/sunxi_defconfig .config
+</code></pre></div><p>Configurar kernel:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>make ARCH<span style=color:#f92672>=</span>arm CROSS_COMPILE<span style=color:#f92672>=</span>/usr/bin/arm-linux-gnueabihf- menuconfig
+</code></pre></div><p>No se si esto es tan importante:</p>
+<blockquote>
+<p>IMPORTANT: add a local version suffix. Follow the menus:</p>
+</blockquote>
+<pre tabindex=0><code class=language-none data-lang=none>    General setup  ---&gt;
+    () Local version - append to kernel release
+</code></pre><p>Compilar kernel:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>make -j13 ARCH<span style=color:#f92672>=</span>arm CROSS_COMPILE<span style=color:#f92672>=</span>/usr/bin/arm-linux-gnueabihf-
+</code></pre></div><blockquote>
+<p>El parametro -j debería ser el numero de cores de tu procesador + 1.</p>
+</blockquote>
+<p>Modulos (tal vez esto no sea necesario):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>export WORKSPACE<span style=color:#f92672>=</span>./build
+make ARCH<span style=color:#f92672>=</span>arm CROSS_COMPILE<span style=color:#f92672>=</span>/usr/bin/arm-linux-gnueabihf- INSTALL_MOD_PATH<span style=color:#f92672>=</span>$WORKSPACE modules_install
+</code></pre></div><p>Esto instalará los modulos en <code>$WORKSPACE/lib</code> (después será copiado a la CHIP).</p>
+<h2 id=mover>Mover</h2>
+<p>Elimina los symlinks <code>build</code> y <code>source</code> de <code>lib/</code> porque <code>[s]cp -r</code> los seguirá.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>export RELEASE<span style=color:#f92672>=</span>5.2.0-rc1vv1
+unlink lib/modules/$RELEASE/build
+unlink lib/modules/$RELEASE/source
+</code></pre></div><p>Ahora tendrás que <strong>configurar un servidor ssh en la CHIP</strong>,
+no debería ser muy complicado.</p>
+<p>Copiá todo a un directorio temporal a la CHIP:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>scp arch/arm/boot/dts/sun5i-r8-chip.dtb chip@chip:tmp
+scp -r build/lib/modules/$RELEASE arch/arm/boot/zImage .config System.map chip@chip:tmp
+</code></pre></div><p>Y luego movelo a donde corresponda:</p>
+<table>
+<thead>
+<tr>
+<th>workspace source location</th>
+<th>destination on CHIP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>arch/arm/boot/zImage</td>
+<td>/boot/vmlinuz-$RELEASE</td>
+</tr>
+<tr>
+<td>.config</td>
+<td>/boot/config-$RELEASE</td>
+</tr>
+<tr>
+<td>System.map</td>
+<td>/boot/System.map-$RELEASE</td>
+</tr>
+<tr>
+<td>lib/modules/$RELEASE</td>
+<td>/lib/modules/$RELEASE</td>
+</tr>
+</tbody>
+</table>
+<h1 id=conectando>Conectando</h1>
+<p>Pasos sacado de <a href=http://www.chip-community.org/index.php/Chip9$_U-Boot:_how_to_test_a_new_kernel_(in_a_safe_way)#You_need_.28UART1.29_console_access.21>aquí</a>.</p>
+<p>Necesitamos un cable USB-UART y conectarlo como se debe. (TODO: Agregar foto)</p>
+<ul>
+<li>Ground pin 1</li>
+<li>TX pin 3</li>
+<li>RX pin 5</li>
+</ul>
+<p><strong>CABLE ROJO NO, nada de +5v.</strong></p>
+<p>Luego instalar screen:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install screen
+</code></pre></div><p>Conecta el lado del USB a la pc, y lanza screen:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>screen /dev/ttyUSB0 <span style=color:#ae81ff>115200</span>
+</code></pre></div><p>Chequeá la salida de <code>ls /dev/tty*</code> antes y despues de conectar la CHIP para
+encontar el archivo correcto.</p>
+<blockquote>
+<p>Si te sale <code>screen is terminating error</code>, probá con:</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo screen /dev/ttyUSB0 <span style=color:#ae81ff>115200</span>
+</code></pre></div><p>Ahora bootea tu CHIP (conectala a la alimentación).</p>
+<p>Tenes 3 segundos para parar el proceso de booteo y tener acceso a la shell de u-boot.</p>
+<pre tabindex=0><code class=language-none data-lang=none>U-Boot SPL 2016.01-00088-g99c771f (Dec 09 2016 - 22:29:06)
+DRAM: 512 MiB
+CPU: 1008000000Hz, AXI/AHB/APB: 3/2/2
+Trying to boot from NAND
+
+
+U-Boot 2016.01-00088-g99c771f (Dec 09 2016 - 22:29:06 +0000) Allwinner Technology
+
+CPU:   Allwinner A13 (SUN5I)
+I2C:   ready
+DRAM:  512 MiB
+NAND:  8192 MiB
+video-mode 720x480-24@60 not available, falling back to 1024x768-24@60
+Setting up a 720x480i composite-ntsc console (overscan 40x20)
+In:    serial
+Out:   serial
+Err:   serial
+Net:   usb_ether
+starting USB...
+No controllers found
+Hit any key to stop autoboot:  0
+=&gt;
+</code></pre><h1 id=booteando>Booteando</h1>
+<p>La memoria NAND MLC que tiene la CHIP no está soportada en Linux Mainline.
+Por lo que lo siguiente va a tirar kernel panic porque no encuentra un <code>rootfs</code>.</p>
+<p>Pero, técnicamente, Linux arranca.</p>
+<p>La solución, es bootear con un rootfs a través de NFS por usb, en modo usb-device-ethernet,
+que está en la siguiente sección.</p>
+<p>Los pasos para bootear serían:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>editenv bootcmd
+<span style=color:#75715e># cambiar `for path in ${bootpaths}; do run boot_$path; done` por `run boot_noinitrd`</span>
+editenv boot_noinitrd
+<span style=color:#75715e># cambiar el path del kernel `/boot/zImage` a `/boot/vmlinuz-$RELEASE`</span>
+run boot
+</code></pre></div><p>Para copypastear (cambiá el valor de <code>$RELEASE</code>):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>setenv bootcmd <span style=color:#e6db74>&#34;run test_fastboot; if test -n </span><span style=color:#e6db74>${</span>fel_booted<span style=color:#e6db74>}</span><span style=color:#e6db74> &amp;&amp; test -n </span><span style=color:#e6db74>${</span>scriptaddr<span style=color:#e6db74>}</span><span style=color:#e6db74>; then echo (FEL boot); source </span><span style=color:#e6db74>${</span>scriptaddr<span style=color:#e6db74>}</span><span style=color:#e6db74>; fi; run boot_noinitrd&#34;</span>
+setenv boot_noinitrd <span style=color:#e6db74>&#34;mtdparts; ubi part UBI; ubifsmount ubi0:rootfs; ubifsload </span>$fdt_addr_r<span style=color:#e6db74> /boot/sun5i-r8-chip.dtb; ubifsload </span>$kernel_addr_r<span style=color:#e6db74> /boot/vmlinuz-</span>$RELEASE<span style=color:#e6db74>; bootz </span>$kernel_addr_r<span style=color:#e6db74> - </span>$fdt_addr_r<span style=color:#e6db74>&#34;</span>
+run boot
+</code></pre></div><h2 id=rootfs>Rootfs</h2>
+<p>Usé debootstrap:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt install debootstrap
+</code></pre></div><p>Generar el rootfs para la CHIP (armhf = 32bits):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir /nfs/chip
+cd /nfs/chip
+debootstrap --arch armhf stable chip http://deb.debian.org/debian/
+</code></pre></div><h2 id=nfs>NFS</h2>
+<p>Pasos sacados de <a href=http://www.chip-community.org/index.php/Booting_a_new_kernel_and_rootfs_via_NFS>aquí</a>.</p>
+<p>NFS server:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat /etc/exports
+/nfs/chip 192.168.0.0/16<span style=color:#f92672>(</span>rw,sync<span style=color:#f92672>)</span>
+</code></pre></div><p>Iniciar el servidor</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo systemctl restart nfs-server.service
+</code></pre></div><h2 id=ips>IPs</h2>
+<p>Bootear en Debian de NTC para chequear el servidor NFS.</p>
+<p>Cuando conecto la CHIP, me aparece una nueva interfaz de red usb0,
+que udev la renombra a enp3s0f0u1 (ver <code>dmesg | tail</code>).</p>
+<p>En el server (<em>server~seven~7</em>):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo ip addr add 192.168.1.7/24 dev enp3s0f0u1
+</code></pre></div><p>En la CHIP (<em>chip~two~2</em>):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo ip addr add 192.168.1.2/24 dev usb0
+</code></pre></div><p>Chequear ping de una maquina a otra, y si va bien:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo mount 192.168.1.7:/nfs/chip tmp/
+</code></pre></div><p>Nuestro servidor NFS está andando, ahora sólo hay que compilar nuestro Linux
+con soporte usb ethernet (<code>g_ether</code>).</p>
+<h2 id=recompilar>Recompilar</h2>
+<p>Pasos sacados de <a href=https://developer.ridgerun.com/wiki/index.php/How_to_use_USB_device_networking>aquí</a>.</p>
+<p>Activar <code>USB_ETH</code> con <code>menuconfig</code>.</p>
+<pre tabindex=0><code class=language-none data-lang=none>Symbol: USB_ETH [=m]
+   Prompt: Ethernet Gadget (with CDC Ethernet support)
+     Defined at drivers/usb/gadget/Kconfig:628
+     Depends on: &lt;choice&gt; &amp;&amp; NET
+     Location:
+       -&gt; Kernel configuration
+         -&gt; Device Drivers
+           -&gt; USB support (USB_SUPPORT [=y])
+             -&gt; USB Gadget Support (USB_GADGET [=y])
+               -&gt; USB Gadget Drivers (&lt;choice&gt; [=m])
+</code></pre><p>Compilar, copiar y mover como antes.</p>
+<h2 id=bootear-posta>Bootear posta</h2>
+<p>Reiniciar la CHIP (<code>sudo reboot</code>) y parar U-Boot.</p>
+<p>Con setenv definir:</p>
+<pre tabindex=0><code class=language-none data-lang=none>setenv g_ether.dev_addr de:ad:be:af:00:01
+setenv g_ether.host_addr de:ad:be:af:00:00
+setenv ip 192.168.1.2:192.168.1.7::255.255.255.0:chip:usb0:none
+setenv nfsroot 192.168.1.7:/nfs/chip
+
+setenv nfsload mtdparts; ubi part UBI; ubifsmount ubi0:rootfs; ubifsload $fdt_addr_r /boot/sun5i-r8-chip-ml.dtb; ubifsload $kernel_addr_r /boot/vmlinuz-$RELEASE
+setenv nfsargs setenv bootargs root=/dev/nfs rw nfsroot=${nfsroot},v3 ip=${ip} rootfstype=nfs g_ether.dev_addr=${g_ether.dev_addr} g_ether.host_addr=${g_ether.host_addr} rootwait
+setenv nfs_bootcmd &quot;run nfsload ; run nfsargs ; bootz $kernel_addr_r - $fdt_addr_r&quot;
+</code></pre><blockquote>
+<p>Podes guardar las variables permanentemente con <code>saveenv</code>.</p>
+</blockquote>
+<p>Y finalmente, bootear con:</p>
+<pre tabindex=0><code class=language-none data-lang=none>run nfs_bootcmd
+</code></pre><hr>
+<pre tabindex=0><code class=language-none data-lang=none># uname -a
+Linux chip 5.2.0-rc1vv1-gf49aa1de9 #5 SMP Fri May 24 18:07:53 -03 2019 armv7l GNU/Linux
+</code></pre><p>El log completo se encuentra <a href=/media/chip-mainline-kernel.log>acá</a>.</p>
+</section>
+</article>
+</main>
+<footer>
+<div class=copyright>
+<span>🄯 2022 Powered by <a href=http://gohugo.io>Hugo</a>.</span>
+<span>Made with 🙌 by <a href=https://aidea775.github.io>AIDEA775</a>.</span>
+</div>
+</footer>
+<script src=https://aidea775.github.io/assets/randfavicon.js defer async></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js defer></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js defer></script>
+<script src=https://aidea775.github.io/assets/main.js defer></script>
+</div>
+</body>
+</html>

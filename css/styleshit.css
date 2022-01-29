@@ -6,7 +6,7 @@
     --base4: #1178ce;
     --base5: #8c1eb2;
     --base6: #ff3333;
-    --base7: #ffffff;
+    --base7: #FFF7ED;
 
     --base2a: rgba(255, 98, 20, .1);
     --accent: var(--base2);
@@ -15,6 +15,7 @@
 }
 
 body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Roboto Mono', monospace;
@@ -22,19 +23,23 @@ body {
     line-height: 1.5;
     color: #242424;
     color: var(--base0);
-    background-color: #fff;
+    background-color: #F8FAFC;
     background-color: var(--background);
     text-rendering: optimizeLegibility;
     border: none;
+    background: #F9FAFB;
+    background: -webkit-radial-gradient(top left, #F9FAFB, #F3F4F6);
+    background: -moz-radial-gradient(top left, #F9FAFB, #F3F4F6);
+    background: radial-gradient(to bottom right, #F9FAFB, #F3F4F6);
 }
 
 .container {
+    height: 100%;
     max-width: 80ch;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
+    min-height: 100vh;
 }
 
 header {
@@ -43,6 +48,11 @@ header {
     position: relative;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+main {
+    flex-grow: 1;
+    justify-content: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,22 +73,15 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    border-radius: 8px;
-    max-width: 60%;
     padding: 0;
 }
 
 .button a {
-    display: flex;
-    padding: 8px 16px;
     cursor: pointer;
     text-decoration: none;
 }
 
 .button > span {
-    display: flex;
-    padding: 8px 16px;
     color: var(--base1);
 }
 
@@ -137,19 +140,15 @@ header .menu {
     margin: 4px 0
 }
 
-header .menu__inner {
+header .menu ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
-    padding: 0
-}
-
-@media (orientation: portrait) {
-    header .menu__inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    padding: 0;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    column-gap: 1rem;
 }
 
 /* 
@@ -311,15 +310,22 @@ footer a {
 /*
  * 404 Page Layout
  */
-.page-not-found h1 {
-    text-align: center;
-    font-size: 5em;
+ .page-not-found {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-@media (orientation: portrait) {
-    .page-not-found h1 {
-        font-size: 3em;
-    }
+.page-not-found h1 {
+    text-align: center;
+    margin: 0;
+    font-size: clamp(4rem, 6vw, 20rem);
+}
+
+.page-not-found h2 {
+    margin-top: 0;
+    margin-bottom: 10vh;
+    font-size: clamp(2rem, 4vw, 10vw);
 }
 
 .page-not-found .c1 { color: var(--base2) }
