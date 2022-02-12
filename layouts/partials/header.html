@@ -1,8 +1,15 @@
 <header>
-  {{ partial "logo.html" . }}
+  <div>
+    <a class="logo" href="{{ $.Site.BaseURL }}">
+      <span>
+        {{ $.Site.Params.logo.title }}
+      </span>
+      {{ $.Site.Params.logo.subtitle }}
+    </a>
+  </div>
 
-  <nav class="menu">
-    <ul class="menu__inner">
+  <nav>
+    <ul>
       {{ range $.Site.Menus.main }}
       <li class="button">
         <a href="{{ .URL }}">{{ .Name }}</a>

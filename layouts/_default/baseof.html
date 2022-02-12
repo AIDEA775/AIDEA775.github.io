@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.Language }}">
+
 <head>
-  {{ partial "head.html" . }}
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+  {{ with $.Site.Author.name }}
+  <meta name="author" content="{{.}}">{{ end }}
+  {{ hugo.Generator }}
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styleshit.css" type="text/css">
+  <link id="favicon" rel="icon" href="/favicon.png" type="image/png" sizes="16x16">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;900&display=swap" rel="stylesheet">
+
+  <!-- TODO: Quitar -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.min.css"
+    rel="stylesheet" async />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-okaidia.min.css" rel="stylesheet"
+    async />
 </head>
+
 <body>
   <div class="container">
 
     {{ block "header" . }}
-      {{ partial "header.html" . }}
+    {{ partial "header.html" . }}
     {{ end }}
 
     {{ block "main" . }}
     {{ end }}
 
     {{ block "footer" . }}
-      {{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
     {{ end }}
   </div>
 </body>
+
 </html>

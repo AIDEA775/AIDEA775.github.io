@@ -1,32 +1,26 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Site.RegularPages ".Type" "!=" "page") (or .Site.Params.paginate 3) }}
-  <main role="main">
-    <h1>{{ .Title }}</h1>
+
+<div class="welcome">
+  <h1>¡Wenas!</h1>
+  Bienvenido a este pequeño y lejano espacio en internet! ù.ú</p>
+</div>
+
+<main>
+  {{ range $.Site.Menus.main }}
+
+  <section>
+    <h1 class="title">
+      <a href="{{ .URL }}">{{ upper .Name }}</a>
+    </h1>
+
+    {{ $paginator := $.Paginate (where $.Site.RegularPages ".Type" "!=" "page") (or $.Site.Params.paginate 3) }}
+
     {{ range $paginator.Pages }}
-      {{ partial "article-item.html" . }}
+    {{ partial "article-item.html" . }}
     {{ end }}
-  </main>
 
-  {{ if gt $paginator.TotalPages 1 }}
-    <nav class="pagination">
-      <span class="button">
-        {{ if $paginator.HasPrev }}
-          <a href="{{ $paginator.Prev.URL }}">&lt; Prev</a>
-        {{ else }}
-          <span>&lt; Prev</span>
-        {{ end }}
-      </span>
-
-      <span>{{ $paginator.PageNumber}} / {{ $paginator.TotalPages }}</span>
-
-      <span class="button">
-          {{ if $paginator.HasNext }}
-          <a href="{{ $paginator.Next.URL }}">Next &gt;</a>
-        {{ else }}
-          <span>Next &gt;</span>
-        {{ end }}
-      </span>
-    </nav>
+  </section>
   {{ end }}
+</main>
 
 {{ end }}
