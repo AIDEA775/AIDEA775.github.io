@@ -3,12 +3,6 @@ languageCode: es-AR
 defaultContentLanguage: es
 summaryLength: 10
 
-params:
-  showMenuItems: 0
-  fullWidthTheme: false
-  centerTheme: true
-  paginate: 4
-
 languages:
   es:
     menuMore: "Más"

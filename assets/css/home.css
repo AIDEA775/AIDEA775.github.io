@@ -28,13 +28,13 @@ section h1 a {
     letter-spacing: .2em;
     font-size: 1.3em;
     font-weight: 900;
-    padding: 0 1em;
+    padding: 0 1rem;
 }
 
 /* Summaries */
 
 article.item {
-    padding: 1em 1em;
+    padding: 1rem 1rem;
 }
 
 article.item:hover {

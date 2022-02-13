@@ -4,6 +4,7 @@
  .page-not-found {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-grow: 1;
 }
 

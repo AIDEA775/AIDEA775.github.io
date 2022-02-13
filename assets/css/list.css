@@ -1,0 +1,20 @@
+/*
+ * List layout
+ */
+
+main.list {
+    display: flex;
+    flex-direction: column;
+}
+
+main.list > h1 {
+    font-size: 1.5em;
+    font-weight: 100;
+    color: var(--magenta);
+    padding: 0 1rem
+}
+
+main.list > a {
+    margin: 1rem 0;
+    padding: 0 1rem
+}
