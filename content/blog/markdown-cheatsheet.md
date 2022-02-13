@@ -9,10 +9,16 @@ A test post to see if the new blog is working, also handy for checking out theme
 You really want to look at the source for this page.
 
 # Heading 1
+
+arst
+
 ## Heading 2
+
+arst
+
 ### Heading 3
-#### Heading 4
-##### Heading 5
+
+arst
 
 ---
 # Basic Formatting
@@ -39,7 +45,7 @@ The horizontal rule is made with 3 or more dashes.
 
 See [content organization](https://gohugo.io/content-management/organization/).
 
-##### Images in the same folder as the post
+## Images in the same folder as the post
 An image link is created by putting an exclamation mark before the link such
 as `![house](../house.gif)`
 
@@ -48,7 +54,7 @@ as `![house](../house.gif)`
 The `..` is needed because in the final site, the post's `index.html` file is one
 folder below the images (this is due to '.html' elimination from the URLs).
 
-##### Images for a post in their own subfolder
+## Images for a post in their own subfolder
 
 The above observations lead us to a solution. Create a disk structure like this:
 

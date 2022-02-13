@@ -16,11 +16,11 @@
 /* 
  * Sections
  */
-
 .sections {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 2rem;
+    margin-top: 4rem;
 }
 
 section h1 a {
@@ -28,6 +28,10 @@ section h1 a {
     letter-spacing: .2em;
     font-size: 1.3em;
     font-weight: 900;
+    padding: 0 1rem;
+}
+
+section > a {
     padding: 0 1rem;
 }
 
@@ -48,9 +52,4 @@ article.item a {
 
 article.item h2 {
     font-weight: 600;
-}
-
-article.item .meta {
-    font-size: .8em;
-    color: var(--gray);
 }

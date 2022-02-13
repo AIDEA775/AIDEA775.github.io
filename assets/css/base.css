@@ -1,11 +1,12 @@
 :root {
-    --black: #27272A;
+    --black: #3F3F46;
     --gray: #A1A1AA;
     --light: #FAFAFA;
+    --white: #FFF;
+    --divider: #E0F2FE;
     --magenta: #E879F9;
     --orange: #FB923C;
     --sky: #38BDF8;
-    --white: #FFF;
 }
 
 body {
@@ -15,29 +16,12 @@ body {
     font-family: 'Roboto Slab', serif;
     font-size: 1rem;
     line-height: 1.5;
-    color: #27272A;
+    color: #3F3F46;
     color: var(--black);
     background-color: #ffffff;
     background-color: var(--white);
     text-rendering: optimizeLegibility;
     border: none;
-}
-
-.container {
-    height: 100%;
-    max-width: 80ch;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 main {
@@ -71,6 +55,24 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.container {
+    height: 100%;
+    max-width: 80ch;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+svg {
+    align-self: center;
+}
+
+.meta {
+    font-size: .8em;
+    color: var(--gray);
 }
 
 a {

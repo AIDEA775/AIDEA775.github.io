@@ -1,43 +1,37 @@
 /*
  * Article content
  */
- .body h1 {
-    color: var(--base4);
-    font-size: 2em;
-    overflow:hidden;
-    white-space:nowrap;
+.body {
+    font-family: 'Roboto', sans-serif;
 }
 
-.body h1:after {
-    content: "========================================";
-    margin-left: .5rem;
-    font-weight: lighter;
+h1, h2, h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.body h1 {
+    color: var(--sky);
+    font-weight: 900;
+    font-size: 1.8em;
+    margin-bottom: .6em;
 }
 
 .body h2 {
-    color: var(--base2);
-    font-size: 2em;
-    border-bottom: 1px solid var(--border-color);
+    color: var(--magenta);
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.33em;
+    margin-top: 3em;
+    margin-bottom: .6em;
 }
 
 .body h3 {
-    color: var(--base3);
-    font-size: 1.75em;
-}
-
-.body h4 {
-    color: var(--base5);
-    font-size: 1.5em;
-}
-
-.body h5 {
-    color: var(--base6);
+    color: var(--orange);
+    font-weight: 600;
     font-size: 1.25em;
-}
-
-.body h6 {
-    color: var(--base0);
-    font-size: 1em;
+    line-height: 1.4em;
+    margin-top: 2.4em;
+    margin-bottom: .6em;
 }
 
 p {
@@ -117,7 +111,7 @@ blockquote {
     }
 }
 
-hr {
+.body hr {
     width:90%;
     height:1px;
     border:none;

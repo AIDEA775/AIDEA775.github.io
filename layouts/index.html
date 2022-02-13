@@ -5,6 +5,10 @@
   Bienvenido a este pequeño y lejano espacio en internet! ù.ú</p>
 </div>
 
+<svg height="2rem" width="2rem" stroke="var(--sky)" fill="none" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+
 <div class="sections">
   {{ range (.Site.Sections.ByParam "orden") }}
 
@@ -17,7 +21,16 @@
     {{ .Render "summary" }}
     {{ end }}
 
+    <a href="{{ .Permalink }}">ver el resto</a>
+
   </section>
+
+  <svg height="2rem" width="2rem" viewBox="0 0 24 24" fill="var(--divider)">
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path
+      d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+  </svg>
+
   {{ end }}
   </main>
 </div>
