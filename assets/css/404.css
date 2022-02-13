@@ -1,0 +1,32 @@
+/*
+ * 404 Page Layout
+ */
+ .page-not-found {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.page-not-found h1 {
+    text-align: center;
+    margin: 0;
+    font-size: clamp(4rem, 6vw, 20rem);
+}
+
+.page-not-found h2 {
+    margin-top: 0;
+    margin-bottom: 10vh;
+    font-size: clamp(2rem, 4vw, 10vw);
+}
+
+.page-not-found .c1 { color: var(--base2) }
+.page-not-found .c2 { color: var(--base3) }
+.page-not-found .c3 { color: var(--base4) }
+.page-not-found .c4 { color: var(--base5) }
+.page-not-found .c5 { color: var(--base6) }
+.page-not-found .emoji { color: var(--base1) }
+
+.page-not-found h2 {
+    text-align: center;
+    color: var(--base0);
+}

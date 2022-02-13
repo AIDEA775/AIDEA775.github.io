@@ -1,0 +1,30 @@
+/*
+ * Header Logo
+ */
+ .logo {
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.35em .5em 0.35em 2em;
+    text-decoration: none
+}
+
+.logo > span {
+    font-weight: 900;
+}
+
+/*
+ * Header menu
+ */
+header nav {
+    margin: .2em 2em;
+    padding-top: 0.2rem;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 1em;
+}

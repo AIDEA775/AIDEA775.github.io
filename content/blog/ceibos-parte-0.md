@@ -2,6 +2,7 @@
 title: "CeibOS. Parte 0"
 date: 2019-11-06T22:01:50-03:00
 draft: false
+summary: 
 ---
 
 ### Nunca entendí los _shortcuts_

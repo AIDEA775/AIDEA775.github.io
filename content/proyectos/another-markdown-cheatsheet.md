@@ -2,6 +2,10 @@
 title: "Another Markdown Cheatsheet"
 date: 2019-11-09T12:08:43-03:00
 draft: true
+tags: 
+  - probando
+  - uno
+  - dos
 ---
 
 This is intended as a quick reference and showcase. For more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).

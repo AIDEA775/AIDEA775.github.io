@@ -10,9 +10,9 @@
 
   <nav>
     <ul>
-      {{ range $.Site.Menus.main }}
+      {{ range (.Site.Sections.ByParam "orden") }}
       <li class="button">
-        <a href="{{ .URL }}">{{ .Name }}</a>
+        <a href="{{ .Permalink }}">{{ .Section }}</a>
       </li>
       {{ end }}
     </ul>

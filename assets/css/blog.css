@@ -1,0 +1,59 @@
+/* 
+ * Article common
+ */
+
+ main {
+    padding: 2em;
+}
+
+
+/*
+ * Article post layuot
+ */
+
+main > h1 {
+    font-size: 3em;
+    font-weight: 100;
+    color: var(--base2);
+}
+
+article.post > h1 {
+    --border: 3px dotted var(--base2);
+    position: relative;
+    color: var(--base2);
+    margin: 0 0 15px;
+    font-size: 2.25em;
+    font-weight: 100;
+    padding-bottom: 15px;
+    border-bottom: var(--border)
+}
+
+article.post > h1:after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    display: block;
+    width: 100%;
+    border-bottom: var(--border)
+}
+
+article.post > h1 a {
+    text-decoration: none
+}
+
+article.post .meta {
+    font-size: 0.9em;
+    text-align: right;
+}
+
+article.post section.body {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+  
+@media (orientation: portrait) {
+    article.post section.body {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+}

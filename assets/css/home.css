@@ -1,0 +1,56 @@
+/* Welcome */
+.welcome {
+    height: 32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h1 {
+    color: var(--orange);
+    font-size: 2.8em;
+    font-weight: 300;
+}
+
+/* 
+ * Sections
+ */
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+section h1 a {
+    color: var(--magenta);
+    letter-spacing: .2em;
+    font-size: 1.3em;
+    font-weight: 900;
+    padding: 0 1em;
+}
+
+/* Summaries */
+
+article.item {
+    padding: 1em 1em;
+}
+
+article.item:hover {
+    background-color: var(--light);
+    transition: 200ms ease;
+}
+
+article.item a {
+    color: var(--black);
+}
+
+article.item h2 {
+    font-weight: 600;
+}
+
+article.item .meta {
+    font-size: .8em;
+    color: var(--gray);
+}

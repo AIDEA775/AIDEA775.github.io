@@ -5,22 +5,20 @@
   Bienvenido a este pequeño y lejano espacio en internet! ù.ú</p>
 </div>
 
-<main>
-  {{ range $.Site.Menus.main }}
+<div class="sections">
+  {{ range (.Site.Sections.ByParam "orden") }}
 
   <section>
-    <h1 class="title">
-      <a href="{{ .URL }}">{{ upper .Name }}</a>
+    <h1>
+      <a href="{{ .Permalink }}">{{ upper .Section }}</a>
     </h1>
 
-    {{ $paginator := $.Paginate (where $.Site.RegularPages ".Type" "!=" "page") (or $.Site.Params.paginate 3) }}
-
-    {{ range $paginator.Pages }}
-    {{ partial "article-item.html" . }}
+    {{ range where .Pages "Section" .Section | first 3 }}
+    {{ .Render "summary" }}
     {{ end }}
 
   </section>
   {{ end }}
-</main>
-
+  </main>
+</div>
 {{ end }}

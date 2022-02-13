@@ -1,63 +1,63 @@
 {{ define "main" }}
-  <main role="main">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-      <h1>
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-      </h1>
+<main role="main">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </h1>
 
-      <div class="meta">
-        {{ partial "article-meta" . }}
+    <div class="meta">
+      {{ partial "article-meta" . }}
 
-        <!-- TODO Clean this -->
-        {{ with .Params.tags }}
-          <br>
-          <span class="key">tags:</span>
-          <span class="val">
-          {{ range . }}
-            <a href="{{ . | urlize | printf "tags/%s" | relURL }}">{{ . }}</a>
-          {{ end }}
-          </span>
+      <!-- TODO Clean this -->
+      {{ with .Params.tags }}
+      <br>
+      <span class="key">tags:</span>
+      <span class="val">
+        {{ range . }}
+        <a href="{{ . | urlize | printf " tags/%s" | relURL }}">{{ . }}</a>
         {{ end }}
+      </span>
+      {{ end }}
 
-        {{ with .Params.Cover }}
-          <img src="{{ . | absURL }}" class="post-cover" />
-        {{ end }}
-        <!-- TODO Clean this -->
-      </div>
+      {{ with .Params.Cover }}
+      <img src="{{ . | absURL }}" class="post-cover" />
+      {{ end }}
+      <!-- TODO Clean this -->
+    </div>
 
-      <section class="body" itemprop="articleBody">
-        {{ .Content }}
-      </section>
-    </article>
-  </main>
+    <section class="body" itemprop="articleBody">
+      {{ .Content }}
+    </section>
+  </article>
+</main>
 
-  {{ if or .NextInSection .PrevInSection }}
-    <nav class="pagination">
-      <div class="pagination__title">
-        <span>{{ $.Site.Params.ReadOtherPosts }}</span>
-      </div>      
+{{ if or .NextInSection .PrevInSection }}
+<nav class="pagination">
+  <div class="pagination__title">
+    <span>{{ $.Site.Params.ReadOtherPosts }}</span>
+  </div>
 
-      <div class="pagination__buttons">
-        {{ if .NextInSection }}
-        <span class="button previous">
-          <a href="{{ .NextInSection.Permalink }}">
-            <span class="button__icon">←</span>
-            <span class="button__text">{{ .NextInSection.Title }}</span>
-          </a>
-        </span>
-        {{ end }}
-        {{ if .PrevInSection }}
-        <span class="button next">
-          <a href="{{ .PrevInSection.Permalink }}">
-            <span class="button__text">{{ .PrevInSection.Title }}</span>
-            <span class="button__icon">→</span>
-          </a>
-        </span>
-        {{ end }}
-      </div>
-    </nav>
-  {{ end }}
+  <div class="pagination__buttons">
+    {{ if .NextInSection }}
+    <span class="button previous">
+      <a href="{{ .NextInSection.Permalink }}">
+        <span class="button__icon">←</span>
+        <span class="button__text">{{ .NextInSection.Title }}</span>
+      </a>
+    </span>
+    {{ end }}
+    {{ if .PrevInSection }}
+    <span class="button next">
+      <a href="{{ .PrevInSection.Permalink }}">
+        <span class="button__text">{{ .PrevInSection.Title }}</span>
+        <span class="button__icon">→</span>
+      </a>
+    </span>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}
 
-  {{ partial "comments.html" . }}
+{{ partial "comments.html" . }}
 
 {{ end }}

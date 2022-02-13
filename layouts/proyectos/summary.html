@@ -1,0 +1,11 @@
+<article class="item" itemscope>
+    <h2>
+        <a href="{{ .RelPermalink }}">
+            {{ .Title }}{{ if .Draft }} (Draft){{ end }}
+        </a>
+    </h2>
+    <div class="meta">
+        {{ delimit .Params.Tags " - "}}
+    </div>
+    {{ .Summary }}
+</article>

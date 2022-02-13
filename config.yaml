@@ -1,6 +1,7 @@
 baseURL: "https://aidea775.github.io/"
 languageCode: es-AR
 defaultContentLanguage: es
+summaryLength: 10
 
 params:
   showMenuItems: 0
@@ -20,7 +21,6 @@ languages:
     menu:
       main:
         - name: blog
-          type: pages
         - name: proyectos
         - name: comics
         - name: haikus

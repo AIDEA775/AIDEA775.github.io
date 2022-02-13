@@ -2,6 +2,7 @@
 title: "Linux Mainline en CHIP"
 date: 2019-08-16T18:10:40-03:00
 draft: false
+summary: Compilé Linux mainline para la CHIP.
 ---
 
 En este texto cuento como fue el proceso que llevé a cabo para compilar
