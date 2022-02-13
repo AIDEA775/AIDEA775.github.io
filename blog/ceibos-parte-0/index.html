@@ -1,0 +1,300 @@
+<!doctype html><html lang=es>
+<head>
+<meta charset=utf-8>
+<title>CeibOS. Parte 0</title>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link id=favicon rel=icon href=/favicon.png type=image/png sizes=16x16>
+<link rel=stylesheet href=/main.min.e4fee1f481c70a520e1dfbc95b72d1fd8cc59634a6c3d8c8bf96e7a05b2f46d4.css type=text/css>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700;900&family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel=stylesheet>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.min.css rel=stylesheet async>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-okaidia.min.css rel=stylesheet async>
+</head>
+<body>
+<div class=container>
+<header>
+<div>
+<a class=logo href=https://aidea775.github.io/>
+<span>
+AIDEA775
+</span>
+en español
+</a>
+</div>
+<nav>
+<ul>
+<li class=button>
+<a href=https://aidea775.github.io/blog/>blog</a>
+</li>
+<li class=button>
+<a href=https://aidea775.github.io/proyectos/>proyectos</a>
+</li>
+<li class=button>
+<a href=https://aidea775.github.io/comics/>comics</a>
+</li>
+<li class=button>
+<a href=https://aidea775.github.io/haikus/>haikus</a>
+</li>
+<li class=button>
+<a href=https://aidea775.github.io/gists/>gists</a>
+</li>
+</ul>
+</nav>
+</header>
+<main role=main>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<div class=meta>
+<time itemprop=datePublished datetime=" 2019-11-06">
+November 06, 2019
+</time>
+</div>
+<h1>
+CeibOS. Parte 0
+</h1>
+Nunca entendí los shortcuts y no los entendí porque no tienen sentido: Si estoy en un editor de texto, Ctrl+c copia el texto seleccionado.
+<hr>
+<section class=body itemprop=articleBody>
+<h3 id=nunca-entendí-los-_shortcuts_>Nunca entendí los <em>shortcuts</em></h3>
+<h6 id=y-no-los-entendí-porque-no-tienen-sentido>y no los entendí porque no tienen sentido:</h6>
+<ul>
+<li>Si estoy en un editor de texto, <code>Ctrl+c</code> copia el texto seleccionado.</li>
+<li>Pero si estoy en una terminal, <code>Ctrl+c</code> termina el proceso que esta corriendo.</li>
+<li>En cambio, <code>Ctrl+Shift+c</code> en una terminal copia el texto seleccionado.</li>
+<li>Pero, <code>Ctrl+Shift+c</code> en Chromium abre el inspector.</li>
+<li>&mldr;</li>
+<li>En Visual Code, <code>Ctrl+x</code> corta la linea actual si no hay texto seleccionado.</li>
+<li>Pero en cualquier otro lado, <code>Ctrl+x</code> no hace nada si no hay texto seleccionado.</li>
+<li>&mldr; TODO más y conectar</li>
+</ul>
+<p>Es cierto hay otros que masomenos son estándar, como:</p>
+<ul>
+<li><code>Ctrl+t</code>/<code>Ctrl+Shift+t</code> para abrir/reabrir pestañas.</li>
+<li><code>Ctrl+w</code>/<code>Ctrl+q</code> para cerrar una pestaña/ventana.</li>
+<li><code>Ctrl+o</code>/<code>Ctrl+s</code> para abrir/guardar un archivo.</li>
+<li><code>Alt+1..9</code> para cambiar de pestaña.</li>
+</ul>
+<p>Pero despues hay atajos como:</p>
+<ul>
+<li><code>Ctrl+Alt+l</code> que bloquea la pantalla.</li>
+<li><code>Ctrl+Alt+Der</code> en Visual Code parte el editor y pone la pestaña a la derecha.</li>
+<li><code>Ctrl+Alt+Print</code> saca un screenshot de la ventana y lo pega en el <em>clipboard</em>.</li>
+<li><code>Ctrl+Alt+F1..F7</code> cambia a la tty1..tty7.</li>
+<li><code>Ctrl+Alt+A</code> activa la ventana que requiere atención.</li>
+<li><code>Ctrl+Alt+t</code> lanza una terminal.</li>
+<li><code>Ctrl+Alt+-</code> en Visual Code va hacia atrás.</li>
+<li><code>Ctrl+Alt+Del</code> que mata al servidor X (!) (poweroff en GNOME).</li>
+</ul>
+<p>Entonces, ¿qué relación hay entre los atajos que empiezan con <code>Ctrl+Alt</code>? Ninguna.</p>
+<p>Algunos son del entorno grafico, otros del programa, y otros del sistema operativo.</p>
+<p>Pero es que nunca hubo una guía o un patrón, cada programa, cada <em>desktop environment</em>
+y cada sistema operativo hace lo que quiere/puede.</p>
+<p>Y hace falta eso, una guía de diseño que ponga reglas tipo:</p>
+<ul>
+<li>Locales a un proceso va con <code>Ctrl+algo</code></li>
+<li>Si intervienen varios procesos va con <code>Meta+algo</code>.</li>
+<li>Si se agrega <code>Shift</code> hace lo mismo, pero mas grande/fuerte/&ldquo;a lo bestia&rdquo;.</li>
+<li>Si se agrega <code>Alt</code> hace lo mismo, pero de forma <em>alternativa</em>.</li>
+<li>Si se agrega <code>¿?</code> hace justo lo opuesto.</li>
+</ul>
+<hr>
+<p>Algunos axiomas:</p>
+<ul>
+<li>
+<p>Los shortcuts no deben depender de la distribución del teclado, y deben ser pensados
+en torno a su ubicación en el teclado, y no por la letra que representa en qwerty.</p>
+</li>
+<li>
+<p>Shortcut no usado, es un shortcut desperdiciado.</p>
+<p>Los shortcuts deben ser faciles de aprender y consultar en todo momento.
+Por ejemplo, con <code>Mod+?</code> en donde sea que estemos, se despliega la ayuda
+con un buscador donde poder filtrar los shortcuts disponibles, tanto los del
+entorno grafico como los del programa que tenga foco en ese momento.</p>
+</li>
+<li>
+<p>El sistema operativo nunca, nunca nunca, debe tomar decisiones sin el consentimiento
+del usuario, y mucho menos hacer cosas a espaldas del usuario.</p>
+<p>Me estoy refiriendo a las actualizaciones en segundo plano,
+el usuario tiene el derecho de saber que el gestor de paquetes va a estar usando ancho de banda y ciclos de procesador.</p>
+<p>La recolección de datos estaría bien, si se mantiene informado al usuario de los datos
+que se enviaron o se están por enviar.</p>
+</li>
+<li>
+<p>Toda acción o decision del sistema operativo debe ser cancelable.</p>
+<p>Toda accion debe reportarse por medio de notificaciones.
+Desde conectarse a una red wifi, montar un dispositivo, apagar la pantalla, o buscar actualizaciones.
+Y por ejemplo, con <code>Mod+Esc</code> se cancela la acción que se está por hacer o que se acaba de hacer.</p>
+</li>
+<li>
+<p>La pantalla nunca debe parpadear, ni durante el <em>booteo</em> ni cuando se conecta un monitor externo.</p>
+<p>En serio, es molesto.</p>
+</li>
+<li>
+<p>Las acciones rapidas deben cambiar muy poco el estado de la pantalla.</p>
+<p>Lanzar una app debe ser algo rapido si se sabe que es lo que uno quiere.
+Una forma de lograrlo es usando la busqueda, en menos de 3 letras uno encuentra la app que busca.
+Los lanzadores de apps en full screen hacen que <strong>todo</strong> el contenido de la pantalla
+cambie rapidamente dos veces, casi como un &ldquo;parpadeo&rdquo;.</p>
+</li>
+<li>
+<p>El padding es bueno, pero tampoco la pavada.</p>
+<p>Cada pixel es valioso para mostrar información, pero tambien hay que separar una información de otra.
+El ruido visual es lo peor.</p>
+</li>
+<li>
+<p>Hay que darle funciones especiales al trackpoint de las Thinkpads.</p>
+<p>El pupito rojo es genial, pero no hay ningun entorno grafico que saque provecho de su ubicación.</p>
+</li>
+</ul>
+<hr>
+<p>El humano es muy bueno para ubicar objetos espacialmente,
+incluso con los ojos cerrados vas a poder decir donde está tu celuar,
+indicar en que dirección está la puerta de salida,
+y recordar donde dejaste la taza de café.</p>
+<p>Pero cuando tenes muchas ventanas/pestañas abiertas,
+no es tan facil saber donde esta esa ventana/pestaña que necesitas,
+<em>ni mucho menos cual es el camino para llegar a ella</em>.</p>
+<blockquote>
+<p>En los entornos gráficos normales, las ventanas son flotantes, pueden superponerse,
+para cambiar entre ellas hay que recorrer una lista ordenada de alguna forma,
+las ventanas están en un solo escritorio virtual, y estos se ubican en filas y columnas.</p>
+</blockquote>
+<blockquote>
+<p>Luego existen los <em>tiling managers</em>, donde las ventanas son mosaicos, no se superponen,
+se van acomodando ocupando toda la pantalla, no hace falta recorrer una lista para cambiar de
+ventana ya que están todas a la vista.
+los escritorios virtuales saben ser en una lista que puede ser dinamica (no tienen tamaño fijo).</p>
+</blockquote>
+<blockquote>
+<p>Y no me enteré de otra cosa, hay diferentes tiling managers que permiten ordenar los mosaicos
+de distintas formas, algunos permiten transformar un mosaico en una ventana flotante,
+de igual forma hay entornos que permiten acomodar las ventanas flotantes en una suerte de mosaico.</p>
+</blockquote>
+<hr>
+<p>Meta: Usar la pc sin tener que mirar la pantalla</p>
+<p>Caso de uso: Cuando te conectas a un proyector, y este está detras tuyo.</p>
+<p>Imagino lo siguente:</p>
+<ul>
+<li>
+<p>Las ventanas son flotantes, pero no se pueden superponer,
+sino que se van acomodando donde haya espacio.</p>
+</li>
+<li>
+<p>Un escritorio es <em>scrolleable</em>.</p>
+</li>
+<li>
+<p>Cuando no haya espacio para una ventana, el escritorio se &ldquo;expande&rdquo; hasta que la ventana entre.</p>
+</li>
+<li>
+<p>El escritorio se puede scrollear o verticalmente u horizontalmente, pero no los dos a la vez.</p>
+</li>
+<li>
+<p>Los escritorios se superponen, cada uno con su dirección de scroll.</p>
+</li>
+<li>
+<p>Las aplicaciones se pueden recorrer a través de una vista previa del escritorio o scrolleandolo.</p>
+</li>
+<li>
+<p>Existen 3 escritorios: uno base, uno alterno, y uno superior (¿hace falta más?).</p>
+</li>
+<li>
+<p>Un escritorio se muestra a traves de todas las pantallas (un dibujo explicaría mejor esto).</p>
+<p>Si la segunda pantalla está a la izquierda o derecha:</p>
+<ul>
+<li>Si el escritorio es scrolleable horizontalmente,
+entonces el escritorio se muestra en las dos pantallas.</li>
+<li>Si en cambio es scrolleable verticalmente,
+entonces se muestra solamente en la pantalla principal.</li>
+</ul>
+</li>
+<li>
+<p>Se puede scrollear demás en caso que sea necesario (ver ejemplo de uso).</p>
+</li>
+<li>
+<p>Los escritorios tienen cierta cantidad de filas y columnas que las ventanas pueden ocupar,
+independientemente de la resolución, así que pasar entre pantallas con resoluciones distintas
+no debería ser un problema.</p>
+<p>Ya que si una app ocupaba 6 de 12 columnas en una pantalla 720p,
+cuando se scrollee y pase a la pantalla secundaria 1080p,
+se redimensionará para seguir ocupando la mitad horizontal.</p>
+</li>
+</ul>
+<p>Ejemplo de caso de uso:</p>
+<blockquote>
+<p>TODO: Una animación acá seria mucho mas simple de entender.</p>
+</blockquote>
+<ol>
+<li>Presentación de <em>slides</em> con un proyector.</li>
+<li>Pantalla principal es la pantalla interna de la notebook.</li>
+<li>Pantalla secundaria es el proyector, y está a la izquierda de la principal.</li>
+<li>Las N slides se abren <strong>en orden</strong> en N ventanas
+que se ubican en el escritorio base que es scrolleable horizontalmente.</li>
+<li>En la pantalla principal se encuentra la primera slide, y el resto a la derecha.</li>
+<li>Se hace scroll hacia la derecha, la primera slide ahora es visible por el proyector
+y en la pantalla principal se encuentra la segunda slide.</li>
+<li>En caso que se requiera hacer un cambio o chequear otra cosa,
+se superpone el escritorio alterno, que se configura para ser scrolleable verticalmente,
+y por lo tanto, solo se ve en la pantalla principal,
+se puede scrollear sin afectar lo que se ve en el proyector.</li>
+<li>Si se quiere mostrar algo por arriba de la presentación, por ejemplo una demo,
+se superpone el escritorio superior, se lo configura en espejo,
+de modo que el o los programas del escritorio se vean en ambas pantallas,
+mientras que la presentación sigue por debajo justo donde la dejaron.</li>
+<li>Para volver a la presentacion, simplemente se des-superpone los escritorios.</li>
+</ol>
+<p>Puede que no sea gran cosa, así que acá van las:</p>
+<h6 id=pros>PROS</h6>
+<ul>
+<li>En ningun momento se tuvo que hacer <code>Alt+Tab</code>, ni se vieron por el proyector las ventanas abiertas.</li>
+<li>Todo esta espacialmente ubicado, y no hay comportamientos erraticos del tipo fullscreen en
+la pantalla principal en vez del proyector.</li>
+<li>Tampoco se tuvo que arrastar una ventana de una pantalla a otra.</li>
+<li>No se sacrificó una pantalla al poner la segunda en modo espejo.</li>
+<li>Las slides se controlan de la misma forma que se controla el entorno grafico,
+nada de perder el foco y que de pronto la slide no avance.</li>
+<li>Poder superponer la demo por arriba de la slide es algo que no se puede hacer
+sin sacar el full screen de la presentacion, perdiendo el estado y rompiendo todo.</li>
+</ul>
+<hr>
+<h1 id=wip>WIP</h1>
+<p>Una de las cosas que más me gustaron al usar <code>i3wm</code>, es abrir varias terminales
+(usaba <code>urxvt</code>) y usar el <em>Windows Manager</em> para acomodarlas en mosaico o pestañas
+según quisiera.</p>
+<p>El entorno grafico debe permitir hacer eso, administrar muchas ventanas.
+Por lo que programas no deberían tener su propia gestion de tabs,
+eso debería gestionarlo el propio compositor.</p>
+<p>Las ventanas deben ser eficientes en mostrar una sola cosa conscisa.</p>
+<p>Con esto lograríamos dar la sensacion de estar usando una sola aplicación que lo
+tiene todo, y que con plugins (programas) podemos hacer mas cosas.</p>
+<hr>
+<p>El log del kernel al bootear es lindo, no hay porqué esconderlo.
+O tal vez ya lo he visto tantas veces que me acostumbré.</p>
+<p>De todas formas, hay que agregarle más color.</p>
+<hr>
+<p>La gestion de ventanas debe ser escalable, tanto en tamaño de monitor, resolución,
+y cantidad de ventanas abiertas, nada se puede perder de vista ni mezclarse.</p>
+<p>Debe ser intuitivo manejar las ventanas usando un proyector
+(o sea, sin tener que girar la cabeza para ver que es lo que hay en la segunda pantalla).</p>
+<p>Saltar entre dos ventanas, por mas lejos que estén, debe ser trivial.</p>
+<hr>
+</section>
+</article>
+</main><svg height="2rem" width="2rem" viewBox="0 0 24 24" fill="var(--divider)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1.0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1.0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1.0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+<footer>
+<div class=copyright>
+<span>
+Made with
+<a href=http://gohugo.io>Hugo</a>
+from <i>the end of world.</i>
+</span>
+</div>
+</footer>
+<script src=https://aidea775.github.io/%20assets/randfavicon.js defer async></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js defer></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js defer></script>
+<script src=https://aidea775.github.io/%20assets/main.js defer></script>
+</div>
+</body>
+</html>
