@@ -13,6 +13,7 @@ lanzado como _open-source hardware_ corriendo _open-source software_.
 Fue anunciado como "la primera computadora del mundo de $ 9". Mas info en
 [Wikipedia](https://en.wikipedia.org/wiki/CHIP_(computer)).
 
+**Tabla de contenidos**
 {{< toc >}}
 
 # Flasheando

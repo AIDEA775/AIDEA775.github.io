@@ -3,6 +3,12 @@ languageCode: es-AR
 defaultContentLanguage: es
 summaryLength: 10
 
+markup:
+  tableOfContents:
+    endLevel: 3
+    ordered: true
+    startLevel: 1
+
 languages:
   es:
     menuMore: "Más"
