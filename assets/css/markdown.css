@@ -3,6 +3,7 @@
  */
 .body {
     font-family: 'Roboto', sans-serif;
+    max-width: 100%;
 }
 
 h1, h2, h3 {
@@ -70,7 +71,7 @@ h1, h2, h3 {
 .body code {
     padding: 0.1rem 0.4rem;
     border-radius: 3px;
-    background: var(--black);
+    background: var(--gray);
     color: var(--white);
 }
 
@@ -83,26 +84,31 @@ h1, h2, h3 {
     padding: 1em;
     margin: 0.5em 0;
     border-radius: 0.3em;
-    background: var(--black);
-    color: var(--white);
+    background: #282a36;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .body pre code {
-    background: none;
     margin: 0;
     padding: 0;
-    white-space: pre-wrap;
+    background: none;
 }
 
 .body table {
-    table-layout: fixed;
+    display: block;
+    overflow-x: auto;
+    max-width: fit-content;
+    white-space: nowrap;
     margin: 1rem 0;
-}
-
-.body table {
+    padding: .5rem;
     background-color: var(--light);
     border-radius: 4px;
-    padding: .5rem;
+}
+
+.body table tbody,
+.body table thead {
+    width: 100%;
 }
 
 .body blockquote {
@@ -141,4 +147,20 @@ h1, h2, h3 {
     padding: 1rem;
     background-color: var(--light);
     border-radius: 4px;
+}
+
+.anchor {
+    color: var(--sky);
+    opacity: 0;
+    padding-right: .25rem;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: opacity .1s ease-in;
+    will-change: transform, opacity;
+}
+
+.body h1:hover .anchor,
+.body h2:hover .anchor,
+.body h3:hover .anchor {
+    opacity: 100;
 }

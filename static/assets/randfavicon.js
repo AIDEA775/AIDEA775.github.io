@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     var faviconSize = 32;
     var gen = 8;
     var favicon = document.getElementById('favicon');
@@ -9,7 +9,7 @@ window.onload = function() {
     canvas.height = faviconSize;
 
     var context = canvas.getContext('2d');
-    context.scale(faviconSize/gen, faviconSize/gen);
+    context.scale(faviconSize / gen, faviconSize / gen);
     context.imageSmoothingEnabled = false;
 
     // Generate
@@ -21,14 +21,12 @@ window.onload = function() {
 
     function randomColor() {
         var palette = [
-            [0x24, 0x24, 0x24],
-            [0x5c, 0x56, 0x53],
-            [0xff, 0x77, 0x33],
-            [0x7f, 0xe4, 0x20],
-            [0x36, 0xa3, 0xd9],
-            [0xa3, 0x7a, 0xcc],
-            [0xff, 0x33, 0x33],
-            [0xff, 0xff, 0xff]];
+            [0xA1, 0xA1, 0xFA],
+            [0xE0, 0xF2, 0xFE],
+            [0xFB, 0x92, 0x3C],
+            [0x38, 0xBD, 0xF8],
+            [0xA8, 0xA2, 0x9E],
+            [0xFA, 0xFA, 0xFA]];
         var index = Math.floor(Math.random() * palette.length);
         return palette[index];
     }
@@ -39,9 +37,9 @@ window.onload = function() {
         var color = randomColor();
 
         // rgb
-        for (var i = 0; i < 3; i+=1) {
-            imgData.data[left+i] = color[i];
-            imgData.data[right+i] = color[i];
+        for (var i = 0; i < 3; i += 1) {
+            imgData.data[left + i] = color[i];
+            imgData.data[right + i] = color[i];
         }
         // apha
         imgData.data[left + 3] = 255;

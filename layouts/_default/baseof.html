@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
+
   {{ with $.Site.Author.name }}
   <meta name="author" content="{{.}}">{{ end }}
   {{ hugo.Generator }}
@@ -11,8 +12,10 @@
   {{ printf `
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link id="favicon" rel="icon" href="/favicon.png" type="image/png" sizes="16x16">
+
+  <!-- CSS -->
   {{ $css := resources.Match "css/**.css" | resources.Concat "main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css">
 
@@ -24,11 +27,9 @@
     href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700;900&family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap"
     rel="stylesheet">
 
-  <!-- TODO: Quitar -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.min.css"
-    rel="stylesheet" async />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-okaidia.min.css" rel="stylesheet"
-    async />
+  <!-- Favicon -->
+  <link id="favicon" rel="icon" href="/favicon.png" type="image/png" sizes="16x16">
+  <script src="{{ "assets/randfavicon.js" | absURL }}" defer async></script>
 </head>
 
 <body>
@@ -41,10 +42,12 @@
     {{ block "main" . }}
     {{ end }}
 
-    {{ block "footer" . }}
-    {{ partial "footer.html" . }}
-    {{ end }}
   </div>
+  
+  {{ block "footer" . }}
+  {{ partial "footer.html" . }}
+  {{ end }}
+
 </body>
 
 </html>

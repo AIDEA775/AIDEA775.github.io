@@ -1,9 +1,0 @@
-{{ if .IsTranslated }}
-<nav>
-    {{ range .Translations }}
-    <li>
-        <a href="{{ .Permalink }}">{{ .Lang }}{{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
-    </li>
-    {{ end }}
-</nav>
-{{ end }}

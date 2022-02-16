@@ -2,6 +2,7 @@
 {{ $paginator := .Paginate (where .Pages "Section" .Section) 5 }}
 <main class="list">
   <h1>{{ .Title }}</h1>
+  <p>{{ .Description }}</p>
 
   {{ if $paginator.HasPrev }}
   <a href="{{ $paginator.Prev.URL }}">más nuevos</a>

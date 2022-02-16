@@ -1,8 +1,8 @@
 {{ define "main" }}
 
 <div class="welcome">
-  <h1>¡Wenas!</h1>
-  Bienvenido a este pequeño y lejano espacio en internet! ù.ú</p>
+  <h1>¡Holas!</h1>
+  ¿Qué onda, che?</p>
 </div>
 
 <svg height="2rem" width="2rem" stroke="var(--sky)" fill="none" viewBox="0 0 24 24">
@@ -12,6 +12,7 @@
 <div class="sections">
   {{ range (.Site.Sections.ByParam "orden") }}
 
+  {{ if gt (len .Pages) 0 }}
   <section>
     <h1>
       <a href="{{ .Permalink }}">{{ upper .Section }}</a>
@@ -30,6 +31,7 @@
     <path
       d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
   </svg>
+  {{ end }}
 
   {{ end }}
   </main>
