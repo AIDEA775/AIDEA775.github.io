@@ -50,6 +50,34 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
+
+A list is created using asterisks or dashes
+
+* First
+* Second
+* Third
+
+Nested and numeric lists are possible
+
+1. First
+    * Sub 1
+    * Sub 2
+2. Second
+    * Sub 1
+    * Sub 2
+
+Another example
+
+1. Make my changes
+    1. Fix bug
+    2. Improve formatting
+        * Make the headings bigger
+2. Push my commits to GitHub
+3. Open a pull request
+    * Describe my changes
+    * Mention all the members of my team
+        * Ask for feedback
+
 1. First ordered list item
 2. Another item
     * Unordered sub-list. 
@@ -102,6 +130,17 @@ Inline-style:
 
 Reference-style: 
 ![alt text][logo]
+
+An image link is created by putting an exclamation mark before the link such
+as `![house](../house.gif)`
+
+![house](/media/2018-07-07-005922.png)
+
+You can also use the [figure shortcode](https://gohugo.io/content-management/shortcodes/),
+which allows you to set the caption and/or title.
+
+{{< figure src="/media/2018-07-07-005922.png" caption="A Celtic Knot" >}}
+
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
