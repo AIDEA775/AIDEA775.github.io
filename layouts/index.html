@@ -13,14 +13,16 @@
   {{ range (.Site.Sections.ByParam "orden") }}
 
   {{ if gt (len .Pages) 0 }}
-  <section>
+  <section class="{{ .Section }}">
     <h1>
       <a href="{{ .Permalink }}">{{ upper .Section }}</a>
     </h1>
 
-    {{ range where .Pages "Section" .Section | first 3 }}
-    {{ .Render "summary" }}
-    {{ end }}
+    <div>
+      {{ range where .Pages "Section" .Section | first 3 }}
+      {{ .Render "summary" }}
+      {{ end }}
+    </div>
 
     <a href="{{ .Permalink }}">ver el resto</a>
 

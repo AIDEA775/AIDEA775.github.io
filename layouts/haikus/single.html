@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main role="main">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="meta">
+      {{ if .Params.Date }}
+      <time itemprop="datePublished" datetime="{{ .Date.Format " 2006-01-02" }}">
+        {{ .Date.Format "January 02, 2006" }}
+      </time>
+      {{ end }}
+    </div>
+
+    <h1>
+      {{ .Title }}
+    </h1>
+
+    <section class="haiku" itemprop="articleBody">
+      {{ .Content }}
+    </section>
+  </article>
+</main>
+
+{{ partial "comments.html" . }}
+
+{{ end }}
