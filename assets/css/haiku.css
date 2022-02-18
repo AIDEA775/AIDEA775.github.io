@@ -55,7 +55,6 @@ div.haikus {
     text-transform: uppercase;
 }
 
-.post .haiku p:first-child,
-.post .haiku p:last-child {
+.post .haiku p:nth-child(2) {
     font-style: italic;
 }
