@@ -1,7 +1,8 @@
 <article class="item" itemscope>
     <h2>
         <a href="{{ .RelPermalink }}">
-            {{ .Title }}{{ if .Draft }} (Draft){{ end }}
+            {{ .Title }}
+            {{ if .Draft }}(draft){{ end }}
         </a>
     </h2>
     <div class="meta">

@@ -6,7 +6,15 @@
     padding: 1.5em 0;
     text-align: center;
     color: var(--gray);
-    background-color: var(--light);
+    border-width: 20%;
+    border-top: 4px solid var(--light);
+}
+
+footer div {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
 
 footer a {
