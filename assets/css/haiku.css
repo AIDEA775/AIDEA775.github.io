@@ -23,11 +23,11 @@ section.haikus p:not(:first-child) {
 }
 
 /* List */
+
 div.haikus {
     display: flex;
     flex-direction: row;
 }
-
 
 /* Single */
 
