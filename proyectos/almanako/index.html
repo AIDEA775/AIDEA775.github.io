@@ -1,9 +1,8 @@
 <!doctype html><html lang=es>
 <head>
 <meta charset=utf-8>
-<title>Categories</title>
+<title>Almanako</title>
 <meta name=generator content="Hugo 0.92.2">
-<link rel=alternate type=application/rss+xml href=https://aidea775.github.io/categories/index.xml title>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <link rel=stylesheet href=/main.min.80659a306a457c15d89d11a65f10ec7b02d2cb03a0a7eb8550b66eeb5cce10e2.css type=text/css>
 <link rel=preconnect href=https://fonts.googleapis.com>
@@ -44,10 +43,119 @@ en español
 </ul>
 </nav>
 </header>
-<main class=list>
-<h1>Categories</h1>
-<p></p>
-</main>
+<main role=main>
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<div class=meta>
+<time itemprop=datePublished datetime=" 2022-02-18">
+February 18, 2022
+</time>
+</div>
+<h1>
+Almanako
+</h1>
+Una web para imprimir calendarios
+<hr>
+<section class=body itemprop=articleBody>
+<p>En casa nos acostumbramos a usar un almanaque en papel para anotar recordatorios de todo tipo:
+cumples, estudios, exámenes, pagos, etc.</p>
+<p>Pero no todos los años encontrabamos almanaques que tengan espacio para escribir.
+Hubo un año que mi madre tomó unas hojas A4 de impresora e hizo un almanque casero.</p>
+<p>Resultó ser muy cómodo, tenía mucho espacio para anotar, y era compacto, no desperdiciaba
+espacio con fotos u otra cosa. <strong>Pero llevaba su tiempo hacerlo.</strong></p>
+<p>Así nació <a href=https://github.com/AIDEA775/py-cal>este proyecto</a>,
+desde 2017, cada año retomaba el código que
+había escrito el año pasado, lo volvía a entender, y lo mejoraba.</p>
+<p>Empezó como un script en python que generaba imágenes en <code>.svg</code> usando la librería
+<a href=https://pypi.org/project/svgwrite/>svgwrite</a>:</p>
+<p><img src=https://raw.githubusercontent.com/AIDEA775/py-cal/4ce5cf41a4c394dc4cc5038c8d8075495a65455f/preview.svg alt=2017></p>
+<p>Luego lo reescribí usando la librería <a href=https://pypi.org/project/Pillow/>Pillow</a>
+para generar imágenes <code>.png</code> y me permitió año tras año ir mejorando y afinando el diseño:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><figure><img src=preview-2019.png><figcaption>
+<h4>2019</h4>
+</figcaption>
+</figure>
+</td>
+<td><figure><img src=preview-2020.png><figcaption>
+<h4>2020</h4>
+</figcaption>
+</figure>
+</td>
+<td><figure><img src=preview-2021.png><figcaption>
+<h4>2021</h4>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>En 2022 pensé que era momento de pasar a <code>.pdf</code>, ya que es el formato ideal para
+imprimir. Pero en vez de usar una librería para generar un pdf,
+decidí aprovechar que los navegadores pueden imprimir las páginas webs y generar un pdf.</p>
+<p>Así podría escribir el almanque en HTML y CSS, e incluso hacerlo responsivo para
+distintos tipos de hoja.</p>
+<p>Así nace formalmente <a href=https://github.com/AIDEA775/Almanako>Almanako</a>,
+una web simple, para generar un archivo PDF con 12 hojas, uno por cada mes.</p>
+<hr>
+<h3 id=decisiones>
+<a class=anchor href=#decisiones aria-hidden=true><svg width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+</a>Decisiones
+</h3><p>Ya tenía algo de experiencia con <a href=https://tailwindcss.com/>Tailwind</a>,
+lo cual no fué díficil de decidir el framework CSS.</p>
+<p>La cantidad de lógica en Javascript era mínima, sólo lo necesario para
+generar una lista de matrices (7x5) con los días de cada mese, y parsear archivos ICS para agregar los cumpleaños y
+feriados.</p>
+<p>Generar el HTML fué todo un desafío, empecé usando JS nativo, sin
+ninguna librería, pero resultó ser muy verboso y complicado.</p>
+<p>Luego de una investigación y unas pruebas, <a href=https://svelte.dev/>Svelte</a> era lo que buscaba.
+Simple, basado en componentes, sin ninguna carga innecesaria en runtime
+que haga la web más pesada de lo que debería, ya que al final, era sólo HTML sin nada más:
+nada de almacenamiento, ni api rest, ni cookies, ni navegación, etc.</p>
+<h3 id=aprendizajes>
+<a class=anchor href=#aprendizajes aria-hidden=true><svg width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+</a>Aprendizajes
+</h3><p>Más allá de aprender <em>Svelte</em> sobre la marcha (y quedar fascinado por lo minimalista
+que es) me topé con varios problemas que no esperaba:</p>
+<ol>
+<li>
+<p>Los navegadores renderizan de forma distinta:</p>
+<ol>
+<li>
+<p>En Firefox siempre se vió todo correcto, pero al pasar a Chrome, de pronto
+aparecieron algunas lineas divisorias que no deberían estar ahí.</p>
+<p><strong>Eran errores de redondeo!</strong>
+<a href=https://www.palantir.net/blog/responsive-design-s-dirty-little-secret>Este post</a>
+lo explica con lujo de detalle este gran problema que tiene CSS.</p>
+</li>
+<li>
+<p>Aún cuando Tailwind quita todo el estilo que los navegadores personalizan, la posición y tamaño del puntito de los <code>&lt;ul></code> diferieren entre Firefox y Chrome.</p>
+<p>Para poder mantener consistencia visual, <strong>tuve que no seguir las buenas prácticas del HTML</strong> y en cambio usar el unicode bullet <code>• (U+2022)</code>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Performance para la única animación que quería:</p>
+<p>Al presionar <em>OPTIONS</em>, se abre un menú que desplaza la vista previa de los
+meses hacía abajo.</p>
+<p>Al parecer esta decisión de diseño es muy mala, ya que <strong>el navegador vuelve a renderizar los meses por cada frame</strong>, eso es bastante costoso y provocaba <em>lag</em> en la animación (pérdida de fotogramas), especialmente en un celular.</p>
+<p>Terminé leyendo sobre la propiedad CSS <code>will-change</code> para poder optimizar esa animación.</p>
+<blockquote>
+<p>Aunque debería ser usada como última opción, no encontré otra forma para que el navegador no vuelva a renderizar los meses.</p>
+</blockquote>
+</li>
+</ol>
+</section>
+</article>
+</main><svg height="2rem" width="2rem" viewBox="0 0 24 24" fill="var(--divider)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1.0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1.0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1.0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
 <footer>
 <div>
 <a href=https://github.com/AIDEA775 target=_blank rel="noopener noreferrer"><svg width="2rem" height="2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 24c6.6274.0 12-5.3726 12-12C24 5.37258 18.6274.0 12 0 5.37258.0.0 5.37258.0 12c0 6.6274 5.37258 12 12 12z" fill="#3f3f46"/><path d="M12.0003 4.40167c-4.19532.0-7.59844 3.40313-7.59844 7.59843.0 3.3047 2.10937 6.1125 5.05312 7.1625C9.46904 19.1673 9.52061 19.186 9.53467 19.1907 9.57686 19.2048 9.62373 19.2142 9.67061 19.2142 9.91904 19.2142 10.1159 19.0126 10.1159 18.7689 10.1159 18.7548 10.1159 18.7454 10.1159 18.7314c0-.403200000000002.0-.914100000000001.0-1.3219-.48279.098399999999998-1.21404.1922-1.61248.0-.51563-.2485-.77813-.5672-1.02656-1.1953C7.16748 15.4501 6.45498 15.2392 6.42686 15.1079 6.39873 14.972 7.18154 14.7704 7.58467 15.2345 7.98779 15.6985 8.39561 16.6267 9.26279 16.5376 9.68936 16.4954 9.96592 16.4251 10.1394 16.3735 10.1722 16.0735 10.2706 15.7032 10.519 15.4407c-2.03902-.3375-3.39839-1.4343-3.39839-3.5859.0-.979699999999999.28125-1.7391.77812-2.30625C7.81436 9.0798 7.67373 7.9923 8.04873 7.61261c0 0 .529689999999999-.32813 2.04847.74062C10.6644 8.22198 11.2925 8.15636 11.9628 8.15636 11.9769 8.15636 11.9862 8.15636 12.0003 8.15636 12.0144 8.15636 12.0237 8.15636 12.0378 8.15636 12.7128 8.16105 13.3409 8.22667 13.9034 8.35323c1.5188-1.06875 2.0485-.74062 2.0485-.74062C16.3269 7.99698 16.1862 9.08448 16.1019 9.54855 16.5987 10.1204 16.88 10.8798 16.88 11.8548c0 2.1516-1.3547 3.2484-3.3985 3.5859.389099999999999.4078.4032 1.0688.4032 1.3407.0.2578.0 1.9828.0 1.9921C13.8847 19.022 14.0862 19.2189 14.33 19.2189 14.3675 19.2189 14.4003 19.2142 14.4378 19.2048 14.4472 19.2048 14.4753 19.1954 14.4847 19.1907c2.9765-1.0312 5.114-3.8578 5.114-7.1859.0-4.20469-3.4031-7.60313-7.5984-7.60313z" fill="#fff"/></svg>
