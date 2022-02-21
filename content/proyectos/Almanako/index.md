@@ -45,7 +45,7 @@ decidí aprovechar que los navegadores pueden imprimir las páginas webs y gener
 Así podría escribir el almanque en HTML y CSS, e incluso hacerlo responsivo para
 distintos tipos de hoja.
 
-Así nace formalmente [Almanako](https://github.com/AIDEA775/Almanako), 
+Así nace formalmente [Almanako](https://aidea775.github.io/Almanako/) ([GitHub](https://github.com/AIDEA775/Almanako)), 
 una web simple, para generar un archivo PDF con 12 hojas, uno por cada mes.
 
 ---
