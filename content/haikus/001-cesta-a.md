@@ -1,5 +1,5 @@
 ---
-title: Cesta A
+title: Cesta
 date: 2020-02-17
 ---
 
