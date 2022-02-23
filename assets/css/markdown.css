@@ -34,7 +34,14 @@ h1, h2, h3 {
 }
 
 .body img {
+    margin-top: 1rem;
     max-width: 100%
+}
+
+.body figcaption p {
+    margin-top: 0;
+    text-align: center;
+    color: var(--brown);
 }
 
 .body p {
@@ -71,8 +78,8 @@ h1, h2, h3 {
 .body code {
     padding: 0.1rem 0.4rem;
     border-radius: 3px;
-    background: var(--gray);
-    color: var(--white);
+    background: var(--light);
+    font-family: 'Roboto Mono', monospace;
 }
 
 .body code,
@@ -118,14 +125,8 @@ h1, h2, h3 {
     color: var(--brown)
 }
 
-@media (orientation: portrait) {
-    blockquote {
-        margin-left: 0;
-    }
-}
-
 .body th {
-    padding: .5rem 1rem;
+    margin: .5rem 1rem;
     color: var(--black)
 
 }

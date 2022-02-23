@@ -10,39 +10,43 @@ tags:
 ---
 
 
-En casa nos acostumbramos a usar un almanaque en papel para anotar recordatorios de todo tipo:
-cumples, estudios, exámenes, pagos, etc.
+En casa nos acostumbramos a tener un calendario en papel para anotar recordatorios de todo tipo: cumples, estudios, exámenes, pagos, etc.
 
-Pero no todos los años encontrabamos almanaques que tengan espacio para escribir.
-Hubo un año que mi madre tomó unas hojas A4 de impresora e hizo un almanque casero.
+Pero no todos los años encontrábamos almanaques que tengan espacio para escribir.
+Hubo un año que mi madre tomó unas hojas A4 usadas e hizo un calendario casero.
 
-Resultó ser muy cómodo, tenía mucho espacio para anotar, y era compacto, no desperdiciaba
-espacio con fotos u otra cosa. **Pero llevaba su tiempo hacerlo.**
+Resultó ser muy cómodo, tenía mucho espacio para anotar, era compacto, y no desperdiciaba
+espacio con fotos o publicidad. **Pero llevaba tiempo hacerlo.**
 
 Así nació [este proyecto](https://github.com/AIDEA775/py-cal), 
 desde 2017, cada año retomaba el código que
-había escrito el año pasado, lo volvía a entender, y lo mejoraba.
+había escrito, y lo volvía a entender y lo mejoraba.
 
-Empezó como un script en python que generaba imágenes en `.svg` usando la librería
+Empezó como un script en Python que generaba imágenes vectoriales en SVG usando la librería
 [svgwrite](https://pypi.org/project/svgwrite/):
 
-![2017](https://raw.githubusercontent.com/AIDEA775/py-cal/4ce5cf41a4c394dc4cc5038c8d8075495a65455f/preview.svg)
+{{< figure
+src="https://raw.githubusercontent.com/AIDEA775/py-cal/4ce5cf41a4c394dc4cc5038c8d8075495a65455f/preview.svg"
+caption="Cero sentido de diseño en esos tiempos." >}}
 
-Luego lo reescribí usando la librería [Pillow](https://pypi.org/project/Pillow/)
-para generar imágenes `.png` y me permitió año tras año ir mejorando y afinando el diseño:
+
+Luego pasó a usar la librería [Pillow](https://pypi.org/project/Pillow/)
+para generar imágenes PNG y año tras año fui mejorando de a poco el diseño
+(y a medida que iba aprendiendo más cosas de UI/UX):
 
 |  |  |  |
 | -- | -- | -- |
 | {{< figure
-src="preview-2019.png" title="2019" >}} | {{< figure
-src="preview-2020.png" title="2020" >}} | {{< figure
-src="preview-2021.png" title="2021" >}}
+src="preview-2019.png" caption="2019" >}} | {{< figure
+src="preview-2020.png" caption="2020" >}} | {{< figure
+src="preview-2021.png" caption="2021" >}}
 
-En 2022 pensé que era momento de pasar a `.pdf`, ya que es el formato ideal para
-imprimir. Pero en vez de usar una librería para generar un pdf,
-decidí aprovechar que los navegadores pueden imprimir las páginas webs y generar un pdf.
+En 2022 pensé que era momento de pasar a PDF, ya que es un buen formato para
+imprimir. Pero en vez de usar una librería en Python,
+decidí aprovechar que los navegadores pueden imprimir las páginas webs y así que
+esté disponible de forma muy práctica.
 
-Así podría escribir el almanque en HTML y CSS, e incluso hacerlo responsivo para
+Además, podría escribir el almanaque en HTML y CSS, y hacerlo responsivo para
 distintos tipos de hoja.
 
 Así nace formalmente [Almanako](https://aidea775.github.io/Almanako/) ([GitHub](https://github.com/AIDEA775/Almanako)), 
@@ -53,44 +57,52 @@ una web simple, para generar un archivo PDF con 12 hojas, uno por cada mes.
 ### Decisiones
 
 Ya tenía algo de experiencia con [Tailwind](https://tailwindcss.com/),
-lo cual no fué díficil de decidir el framework CSS.
+así que no fue difícil de elegirlo como framework CSS.
 
-La cantidad de lógica en Javascript era mínima, sólo lo necesario para
-generar una lista de matrices (7x5) con los días de cada mese, y parsear archivos ICS para agregar los cumpleaños y
-feriados.
+No había mucha lógica en JavaScript para implementar,
+solo lo necesario para generar una lista de matrices (7x5) con los días de cada mes, y parsear archivos en formato ICS para agregar los cumpleaños y feriados.
 
-Generar el HTML fué todo un desafío, empecé usando JS nativo, sin
+Generar el HTML fue todo un desafío, intenté usar JS nativo, sin
 ninguna librería, pero resultó ser muy verboso y complicado.
 
 Luego de una investigación y unas pruebas, [Svelte](https://svelte.dev/) era lo que buscaba.
 Simple, basado en componentes, sin ninguna carga innecesaria en runtime
-que haga la web más pesada de lo que debería, ya que al final, era sólo HTML sin nada más:
-nada de almacenamiento, ni api rest, ni cookies, ni navegación, etc.
+que haga la web más pesada de lo que debería, ya que al final, era solo HTML sin nada más: Nada de almacenamiento, ni API REST, ni cookies, ni routing,
+no necesito un DOM virtual.
 
 ### Aprendizajes
 
-Más allá de aprender _Svelte_ sobre la marcha (y quedar fascinado por lo minimalista
-que es) me topé con varios problemas que no esperaba:
+Más allá de aprender _Svelte_ sobre la marcha (y quedar fascinado por simple
+que queda el código) me topé con varios problemas que no esperaba:
 
-1. Los navegadores renderizan de forma distinta:
-    1. En Firefox siempre se vió todo correcto, pero al pasar a Chrome, de pronto
-    aparecieron algunas lineas divisorias que no deberían estar ahí.
+1. **Los navegadores renderizan de forma distinta**
 
-        **Eran errores de redondeo!**
-        [Este post](https://www.palantir.net/blog/responsive-design-s-dirty-little-secret)
-        lo explica con lujo de detalle este gran problema que tiene CSS.
+    En Firefox siempre se vio todo correcto, pero al pasar a Chrome,
+    aparecieron algunas líneas divisorias que no deberían estar ahí.
 
-    1. Aún cuando Tailwind quita todo el estilo que los navegadores personalizan, la posición y tamaño del puntito de los `<ul>` diferieren entre Firefox y Chrome.
+    ¡Eran errores de redondeo!
 
-        Para poder mantener consistencia visual, **tuve que no seguir las buenas prácticas del HTML** y en cambio usar el unicode bullet `• (U+2022)`.
+    [Este post](https://www.palantir.net/blog/responsive-design-s-dirty-little-secret)
+    explica con lujo de detalle este GRAN problema que tiene CSS.
 
-1. Performance para la única animación que quería:
+1. **Hay estilos que son difíciles de personalizar**
+
+    Aun cuando Tailwind quita todo el estilo personalizado de los navegadores, la posición y tamaño del puntito de los `<ul>` difieren entre Firefox y Chrome.
+
+    Para poder mantener consistencia visual, tuve que no seguir las mejores prácticas
+    y usar el Unicode bullet `• (U+2022)` para dibujar el puntito.
+
+1. **Performance para la única animación que había**
 
     Al presionar _OPTIONS_, se abre un menú que desplaza la vista previa de los
-    meses hacía abajo.
+    meses hacia abajo.
 
-    Al parecer esta decisión de diseño es muy mala, ya que **el navegador vuelve a renderizar los meses por cada frame**, eso es bastante costoso y provocaba _lag_ en la animación (pérdida de fotogramas), especialmente en un celular.
+    Al parecer esta decisión de diseño no es muy buena, ya que el navegador vuelve a renderizar los meses por cada frame, eso es bastante costoso y provoca _lag_ en la animación, especialmente en un celular.
 
-    Terminé leyendo sobre la propiedad CSS `will-change` para poder optimizar esa animación.
+    Terminé aprendiendo sobre la propiedad CSS `will-change` para poder optimizar esa animación.
 
     > Aunque debería ser usada como última opción, no encontré otra forma para que el navegador no vuelva a renderizar los meses.
+
+{{< figure 
+src="preview-2022.png"
+caption="Lo sé, falta el 1º de marzo, me di cuenta recién en marzo." >}} 
