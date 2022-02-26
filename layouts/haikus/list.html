@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Pages "Section" .Section) 5 }}
+{{ $paginator := .Paginate (where .Pages "Section" .Section) 9 }}
 <main class="list">
   <h1>{{ .Title }}</h1>
   <p>{{ .Description }}</p>

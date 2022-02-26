@@ -160,6 +160,10 @@ h1, h2, h3 {
     will-change: transform, opacity;
 }
 
+.body .center {
+    text-align: center;
+}
+
 .body h1:hover .anchor,
 .body h2:hover .anchor,
 .body h3:hover .anchor {
