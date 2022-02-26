@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (where .Pages "Section" .Section) 9 }}
+<main class="list">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Description }}</p>
+
+  {{ if $paginator.HasPrev }}
+  <a href="{{ $paginator.Prev.URL }}">más nuevos</a>
+  {{ end }}
+
+  <div class="haikus">
+    {{range $paginator.Pages }}
+    {{ .Render "summary" }}
+    {{ end }}
+  </div>
+
+  {{ if $paginator.HasNext }}
+  <a href="{{ $paginator.Next.URL }}">más viejos</a>
+  {{ end }}
+</main>
+
+{{ end }}

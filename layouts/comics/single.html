@@ -1,0 +1,44 @@
+{{ define "main" }}
+<main role="main">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="meta">
+      {{ if .Params.Date }}
+      <time>{{ .Date | time.Format ":date_long" }}</time>
+      {{ end }}
+    </div>
+
+    <h1>
+      {{ .Title }}
+    </h1>
+
+    {{ .Summary }}
+
+    <hr />
+
+    <section class="body" itemprop="articleBody">
+
+      {{- $asset := resources.Get .Params.Img -}}
+      {{ $image := $asset.Fit "1080x1080 webp q90 drawing Box" }}
+      <figure>
+        <img src="{{ $image.RelPermalink }}" />
+      </figure>
+      <p>
+        <a href="{{ $asset.RelPermalink }}" target="_blank" rel="noopener noreferrer">
+          ver en tamaño completo
+        </a>
+      </p>
+
+    </section>
+  </article>
+</main>
+
+<svg height="2rem" width="2rem" viewBox="0 0 24 24" fill="var(--divider)">
+  <path d="M0 0h24v24H0V0z" fill="none" />
+  <path
+    d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+</svg>
+
+{{ partial "comments.html" . }}
+
+{{ end }}
