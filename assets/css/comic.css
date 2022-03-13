@@ -1,5 +1,9 @@
 section.comics div {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    overflow: auto;
+}
+
+article.comic h2 {
+    margin-bottom: .5rem;
 }

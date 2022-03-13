@@ -25,6 +25,10 @@ body {
     overflow-y: scroll;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -69,7 +73,9 @@ ul {
 }
 
 svg {
+    display: block;
     align-self: center;
+    margin: auto;
 }
 
 .meta {

@@ -1,6 +1,7 @@
 <article class="item comic" itemscope>
     <a href="{{ .RelPermalink }}">
-        {{ .Title }} {{ if .Draft }}(draft){{ end }}
+        <h2>{{ .Title }} {{ if .Draft }}(draft){{ end }}</h2>
+
 
         {{- $asset := resources.Get .Params.Img -}}
         {{ $image := $asset.Fill "256x256 webp q90 drawing Top Box" }}

@@ -13,6 +13,16 @@
     font-weight: 300;
 }
 
+#👇 {
+    text-align: center;
+    color: var(--sky);
+    padding: 1rem;
+}
+
+#👇:hover {
+    background-color: var(--light);
+}
+
 /* 
  * Sections
  */

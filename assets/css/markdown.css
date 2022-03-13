@@ -8,6 +8,8 @@
 
 h1, h2, h3 {
     font-family: 'Roboto Slab', serif;
+    scroll-margin-top: 1rem;
+    position: relative;
 }
 
 .body h1 {
@@ -84,7 +86,7 @@ h1, h2, h3 {
 
 .body code,
 .body pre {
-    font-size: .95rem
+    font-size: .95rem;
 }
 
 .body pre {
@@ -100,6 +102,7 @@ h1, h2, h3 {
     margin: 0;
     padding: 0;
     background: none;
+    color: var(--white);
 }
 
 .body table {
@@ -151,10 +154,13 @@ h1, h2, h3 {
 }
 
 .anchor {
-    color: var(--sky);
+    color: unset;
     opacity: 0;
-    padding-right: .25rem;
     position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    padding: 0 .6rem;
     transform: translateX(-100%);
     transition: opacity .1s ease-in;
     will-change: transform, opacity;
