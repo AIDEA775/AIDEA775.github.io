@@ -1,7 +1,8 @@
 ---
 title: Soplo
-date: 2022-02-18T15:30:33-03:00
+date: 2022-02-18
 draft: false
+size: 3
 ---
 
 Olor a café

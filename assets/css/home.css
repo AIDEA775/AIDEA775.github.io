@@ -51,6 +51,7 @@ article.item {
     padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 article.item:hover {

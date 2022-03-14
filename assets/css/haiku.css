@@ -19,6 +19,34 @@ div.haikus {
     gap: 2rem;
 }
 
+/* Sizes */
+
+
+article.item.haiku-1 a {
+    font-weight: 100;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+article.item.haiku-2 a {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+article.item.haiku-3 a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+article.item.haiku-4 a {
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+
 /* Single */
 
 .post {

@@ -1,4 +1,4 @@
-<article class="item haiku" itemscope>
+<article class="item haiku-{{ .Params.Size}}" itemscope>
     <div class="meta">
         <time>{{ .Date | time.Format ":date_long" }}</time>
         {{ if .Draft }}(draft){{ end }}
