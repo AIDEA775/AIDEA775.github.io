@@ -13,27 +13,7 @@ markup:
 
 languages:
   es:
-    menuMore: "Más"
-    readMore: "Leer más"
-    readOtherPosts: "Leer otras publicaciones"
     params:
       logo:
         title: "AIDEA775"
         subtitle: "en español"
-    menu:
-      main:
-        - name: blog
-        - name: proyectos
-        - name: comics
-        - name: haikus
-        - name: gits
-        
-        # - name: "Sobre mí"
-        #   identifier: "about"
-        #   url: "/about"
-        # - name: "Notas"
-        #   identifier: "notes"
-        #   url: "/notes"
-        # - name: "Guias"
-        #   identifier: "guides"
-        #   url: "/guides"

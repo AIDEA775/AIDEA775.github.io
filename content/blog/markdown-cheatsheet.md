@@ -262,4 +262,14 @@ This line is only separated by a single newline, so it's a separate line in the 
 
 ## YouTube Videos
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/b1Ki0DkKCDQ/0.jpg)](http://www.youtube.com/watch?v=b1Ki0DkKCDQ)
+{{< youtube id="b1Ki0DkKCDQ" title="Seven Nation Army but it's Seven DEVICE Army" >}}
+
+
+## Github gists
+
+{{< gist spf13 7896402 >}}
+
+
+## Twitter
+
+{{< tweet user="AIDEA775" id="1478191424780836873" >}}
