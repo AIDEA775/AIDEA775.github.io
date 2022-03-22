@@ -2,6 +2,7 @@ baseURL: "https://aidea775.github.io/"
 languageCode: es
 defaultContentLanguage: es
 summaryLength: 10
+title: AIDEA775 en español
 
 markup:
   tableOfContents:
