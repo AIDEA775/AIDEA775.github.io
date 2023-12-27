@@ -20,7 +20,7 @@ espacio con fotos o publicidad. **Pero llevaba tiempo hacerlo.**
 
 Así nació [este proyecto](https://github.com/AIDEA775/py-cal), 
 desde 2017, cada año retomaba el código que
-había escrito, y lo volvía a entender y lo mejoraba.
+había escrito, lo volvía a entender y lo mejoraba.
 
 Empezó como un script en Python que generaba imágenes vectoriales en SVG usando la librería
 [svgwrite](https://pypi.org/project/svgwrite/):
@@ -50,7 +50,7 @@ Además, podría escribir el almanaque en HTML y CSS, y hacerlo responsivo para
 distintos tipos de hoja.
 
 Así nace formalmente [Almanako](https://aidea775.github.io/Almanako/) ([GitHub](https://github.com/AIDEA775/Almanako)), 
-una web simple, para generar un archivo PDF con 12 hojas, uno por cada mes.
+una web simple, para generar un archivo PDF con 12 hojas, una por cada mes.
 
 ---
 
@@ -89,8 +89,8 @@ que queda el código) me topé con varios problemas que no esperaba:
 
     Aun cuando Tailwind quita todo el estilo personalizado de los navegadores, la posición y tamaño del puntito de los `<ul>` difieren entre Firefox y Chrome.
 
-    Para poder mantener consistencia visual, tuve que no seguir las mejores prácticas
-    y usar el Unicode bullet `• (U+2022)` para dibujar el puntito.
+    Para poder mantener consistencia visual, tuve que no seguir las buenas prácticas
+    y usar el unicode bullet `• (U+2022)` para dibujar puntitos.
 
 1. **Performance para la única animación que había**
 
@@ -103,6 +103,14 @@ que queda el código) me topé con varios problemas que no esperaba:
 
     > Aunque debería ser usada como última opción, no encontré otra forma para que el navegador no vuelva a renderizar los meses.
 
-{{< figure 
+{{< figure
 src="preview-2022.png"
-caption="Lo sé, falta el 1º de marzo, me di cuenta recién en marzo." >}} 
+caption="2022: Lo sé, falta el 1º de marzo, me di cuenta recién en marzo." >}}
+
+{{< figure
+src="preview-2023.png"
+caption="2023: No hubo tiempo para arreglar el bug, pero si para unos retoques de diseño." >}}
+
+{{< figure
+src="preview-2024.png"
+caption="2024: Finalmente arreglé el bug, más unos retoques hermosos." >}}
