@@ -18,7 +18,7 @@ Hubo un año que mi madre tomó unas hojas A4 usadas e hizo un calendario casero
 Resultó ser muy cómodo, tenía mucho espacio para anotar, era compacto, y no desperdiciaba
 espacio con fotos o publicidad. **Pero llevaba tiempo hacerlo.**
 
-Así nació [este proyecto](https://github.com/AIDEA775/py-cal), 
+Así nació [este proyecto](https://github.com/AIDEA775/py-cal),
 desde 2017, cada año retomaba el código que
 había escrito, lo volvía a entender y lo mejoraba.
 
@@ -49,7 +49,7 @@ esté disponible de forma muy práctica.
 Además, podría escribir el almanaque en HTML y CSS, y hacerlo responsivo para
 distintos tipos de hoja.
 
-Así nace formalmente [Almanako](https://aidea775.github.io/Almanako/) ([GitHub](https://github.com/AIDEA775/Almanako)), 
+Así nace formalmente [Almanako](https://aidea775.github.io/Almanako/) ([GitHub](https://github.com/AIDEA775/Almanako)),
 una web simple, para generar un archivo PDF con 12 hojas, una por cada mes.
 
 ---
@@ -114,3 +114,7 @@ caption="2023: No hubo tiempo para arreglar el bug, pero si para unos retoques d
 {{< figure
 src="preview-2024.png"
 caption="2024: Finalmente arreglé el bug, más unos retoques hermosos." >}}
+
+{{< figure
+src="preview-2025.png"
+caption="2025: Renové todas las fuentes, en serio estaba usando Open Sans en un mes?" >}}
